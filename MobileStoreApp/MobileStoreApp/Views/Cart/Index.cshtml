@@ -1,0 +1,93 @@
+﻿@* @model List<MobileStoreApp.Data.Models.OrderItem>
+
+<h2>Shopping Cart</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Phone</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.PhoneId</td>
+                    <td>@item.UnitPrice.ToString("C")</td>
+                    <td>
+                        <form asp-controller="Cart" asp-action="UpdateQuantity" method="post">
+                            <input type="hidden" name="id" value="@item.PhoneId" />
+                            <input type="number" name="quantity" value="@item.Quantity" min="1" />
+                            <button type="submit">Update</button>
+                        </form>
+                    </td>
+                    <td>@(item.Quantity * item.UnitPrice).ToString("C")</td>
+                    <td>
+                        <form asp-controller="Cart" asp-action="RemoveFromCart" method="post">
+                            <input type="hidden" name="id" value="@item.PhoneId" />
+                            <button type="submit">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <a asp-controller="Shop" asp-action="Index">Continue Shopping</a>
+        <a asp-controller="Cart" asp-action="PlaceOrder">Place Order</a>
+    </div>
+}
+else
+{
+    <p>Your cart is empty</p>
+}
+ *@
+@model IEnumerable<MobileStoreApp.Data.Models.OrderItem>
+
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<h2>Your Cart</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Phone</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.PhoneId</td>
+                    <td>@item.UnitPrice.ToString("C")</td>
+                    <td>@item.Quantity</td>
+                    <td>@(item.Quantity * item.UnitPrice).ToString("C")</td>
+                    <td>
+                        <form asp-controller="Cart" asp-action="RemoveFromCart" method="post">
+                            <input type="hidden" name="id" value="@item.PhoneId" />
+                            <button type="submit" class="btn btn-danger">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Your cart is empty</p>
+}

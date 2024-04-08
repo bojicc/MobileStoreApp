@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Panonit\\Desktop\\MobileStore App\\MobileStoreApp\\MobileStoreApp.Data\\MobileStoreApp.Data.csproj": {}
+    "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp.Data\\MobileStoreApp.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Panonit\\Desktop\\MobileStore App\\MobileStoreApp\\MobileStoreApp.Data\\MobileStoreApp.Data.csproj": {
+    "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp.Data\\MobileStoreApp.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Panonit\\Desktop\\MobileStore App\\MobileStoreApp\\MobileStoreApp.Data\\MobileStoreApp.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp.Data\\MobileStoreApp.Data.csproj",
         "projectName": "MobileStoreApp.Data",
-        "projectPath": "C:\\Users\\Panonit\\Desktop\\MobileStore App\\MobileStoreApp\\MobileStoreApp.Data\\MobileStoreApp.Data.csproj",
+        "projectPath": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp.Data\\MobileStoreApp.Data.csproj",
         "packagesPath": "C:\\Users\\Panonit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Panonit\\Desktop\\MobileStore App\\MobileStoreApp\\MobileStoreApp.Data\\obj\\",
+        "outputPath": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Panonit\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

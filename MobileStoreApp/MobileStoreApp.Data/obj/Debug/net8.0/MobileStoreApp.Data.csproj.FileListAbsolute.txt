@@ -9,3 +9,16 @@ C:\Users\Panonit\Desktop\MobileStore App\MobileStoreApp\MobileStoreApp.Data\obj\
 C:\Users\Panonit\Desktop\MobileStore App\MobileStoreApp\MobileStoreApp.Data\obj\Debug\net8.0\refint\MobileStoreApp.Data.dll
 C:\Users\Panonit\Desktop\MobileStore App\MobileStoreApp\MobileStoreApp.Data\obj\Debug\net8.0\MobileStoreApp.Data.pdb
 C:\Users\Panonit\Desktop\MobileStore App\MobileStoreApp\MobileStoreApp.Data\obj\Debug\net8.0\ref\MobileStoreApp.Data.dll
+C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp.Data\bin\Debug\net8.0\MobileStoreApp.Data.deps.json
+C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp.Data\bin\Debug\net8.0\MobileStoreApp.Data.dll
+C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp.Data\bin\Debug\net8.0\MobileStoreApp.Data.pdb
+C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp.Data\obj\Debug\net8.0\MobileStoreApp.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp.Data\obj\Debug\net8.0\MobileStoreApp.Data.AssemblyInfoInputs.cache
+C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp.Data\obj\Debug\net8.0\MobileStoreApp.Data.AssemblyInfo.cs
+C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp.Data\obj\Debug\net8.0\MobileStoreApp.Data.csproj.CoreCompileInputs.cache
+C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp.Data\obj\Debug\net8.0\MobileStoreApp.Data.sourcelink.json
+C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp.Data\obj\Debug\net8.0\MobileStoreApp.Data.dll
+C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp.Data\obj\Debug\net8.0\refint\MobileStoreApp.Data.dll
+C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp.Data\obj\Debug\net8.0\MobileStoreApp.Data.pdb
+C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp.Data\obj\Debug\net8.0\ref\MobileStoreApp.Data.dll
+C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp.Data\obj\Debug\net8.0\MobileStoreApp.Data.csproj.AssemblyReference.cache

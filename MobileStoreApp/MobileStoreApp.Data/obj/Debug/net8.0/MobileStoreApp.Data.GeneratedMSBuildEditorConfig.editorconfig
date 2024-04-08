@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MobileStoreApp.Data
-build_property.ProjectDir = C:\Users\Panonit\Desktop\MobileStore App\MobileStoreApp\MobileStoreApp.Data\
+build_property.ProjectDir = C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp.Data\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
