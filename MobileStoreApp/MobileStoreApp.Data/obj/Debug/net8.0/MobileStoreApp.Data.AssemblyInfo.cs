@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MobileStoreApp.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31090c71771e10a781a17d236da1d9d616c269a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7623d1d70529723c02e7d49779dfb537a5210fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("MobileStoreApp.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MobileStoreApp.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

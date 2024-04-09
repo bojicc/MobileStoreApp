@@ -11,6 +11,7 @@ using System.Text.Json;
 using MobileStoreApp.Data;
 using Microsoft.CodeAnalysis.Scripting;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using Microsoft.CodeAnalysis;
 
 namespace MobileStoreApp.Controllers
 {
@@ -74,6 +75,26 @@ namespace MobileStoreApp.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        private async Task<bool> CheckAvailabilityFromDatabase(int phoneId, int quantity)
+        {
+            var product = await _context.Phones.FindAsync(phoneId);
+            if (product != null && product.Quantity >= quantity)
+            {
+                return true; // Product is available
+            }
+            else
+            {
+                return false; // Product is not available
+            }
+        }
+
+        public async Task<JsonResult> CheckAvailability(int phoneId, int quantity)
+        {
+            bool isAvailable = await CheckAvailabilityFromDatabase(phoneId, quantity);
+            return Json(new { available = isAvailable });
+        }
+
 
     }
 }

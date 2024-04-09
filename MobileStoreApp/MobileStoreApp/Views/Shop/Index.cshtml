@@ -23,3 +23,31 @@
         </div>
     }
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('#addToCart').click(function () {
+            var quantity = $('#quantity').val();
+
+            // Ajax call to check if the quantity is available in the database
+            $.ajax({
+                url: '/Cart/CheckAvailability', // Update with your API endpoint to check availability
+                method: 'POST',
+                data: { quantity: quantity },
+                success: function (response) {
+                    if (response.available) {
+                        // Add item to cart
+                        alert('Item added to cart successfully!');
+                    } else {
+                        // Show alert if quantity exceeds available stock
+                        alert('Sorry, we do not have enough stock for this quantity.');
+                    }
+                },
+                error: function (xhr, status, error) {
+                    // Handle error
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+    });
+</script>

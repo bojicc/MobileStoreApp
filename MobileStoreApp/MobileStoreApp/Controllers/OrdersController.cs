@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -14,12 +15,12 @@ namespace MobileStoreApp.Controllers
     public class OrdersController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public OrdersController(ApplicationDbContext context) /*UserManager userManager)*/
+        public OrdersController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
-            //_userManager = userManager;
+            _userManager = userManager;
         }
 
         // GET: Orders
@@ -49,7 +50,7 @@ namespace MobileStoreApp.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
-            ViewData["UserId"] = new SelectList(_context.Users, "UserName", "UserName");
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return View();
         }
 
@@ -58,16 +59,43 @@ namespace MobileStoreApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("OrderId,UserId,CreateDate")] Order order)
+        [Authorize]
+        public async Task<IActionResult> Create([Bind("OrderId,CreateDate")] Order order)
         {
-            if (ModelState.IsValid)
+            var user = await _userManager.GetUserAsync(this.User);
+            order.UserId = user.Id;
+
+            ModelState.ClearValidationState("UserId");
+
+            if (TryValidateModel(order, "UserId"))
             {
                 _context.Add(order);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UserId"] = new SelectList(_context.Users, "UserName", "UserName", order.UserId);
+
+            //if (ModelState.IsValid)
+            //{
+            //    _context.Add(order);
+            //    await _context.SaveChangesAsync();
+            //    return RedirectToAction(nameof(Index));
+            //}
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", order.UserId);
             return View(order);
+
+
+
+
+
+
+            //if (ModelState.IsValid)
+            //{
+            //    _context.Add(order);
+            //    await _context.SaveChangesAsync();
+            //    return RedirectToAction(nameof(Index));
+            //}
+            //ViewData["UserId"] = new SelectList(_context.Users, "UserName", "UserName", order.UserId);
+            //return View(order);
         }
 
         // GET: Orders/Edit/5
@@ -91,7 +119,7 @@ namespace MobileStoreApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("OrderId,UserId,CreateDate")] Order order)
+        public async Task<IActionResult> Edit(int id, [Bind("OrderId,CreateDate")] Order order)
         {
             if (id != order.OrderId)
             {
