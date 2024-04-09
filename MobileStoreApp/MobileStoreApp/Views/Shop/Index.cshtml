@@ -32,9 +32,12 @@
             <div class="card-body">
                 <h5 class="card-title">@phone.Name</h5>
                 <p class="card-text">@phone.Description.</p>
-                <span class="text-muted">@phone.MyProperty.ToString("C")</span> <br />
-                <a href="@Url.Action("Details", "Shop", new { id = phone.PhoneId })" class="btn btn-sm btn-outline-secondary">View details</a> 
-                <a href="@Url.Action("Index", "Cart", new { id = phone.PhoneId })" class="btn btn-sm btn-outline-secondary">Cart</a>
+                <span class="text-muted">@phone.Price.ToString("C")</span> <br />
+                <a href="@Url.Action("Details", "Shop", new { id = phone.PhoneId })" class="btn btn-sm btn-outline-secondary">View details</a>
+                <form asp-controller="Cart" asp-action="AddToCart" method="post">
+                    <input type="hidden" name="phoneId" value="@phone.PhoneId" />
+                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                </form>
 
             </div>
         </div>

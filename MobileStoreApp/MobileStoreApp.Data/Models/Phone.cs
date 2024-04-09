@@ -17,7 +17,7 @@ namespace MobileStoreApp.Data.Models
         [Required]
         public string Description { get; set; }
         [Required]
-        public decimal MyProperty { get; set; }
+        public decimal Price { get; set; }
         [Required]
         public int Quantity { get; set; }
     }
