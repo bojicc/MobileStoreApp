@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 using MobileStoreApp.Data;
+using Microsoft.CodeAnalysis.Scripting;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MobileStoreApp.Controllers
 {
@@ -31,7 +33,7 @@ namespace MobileStoreApp.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AddToCart(int phoneId)
+        public async Task<IActionResult> AddToCart(int phoneId, int quantity)
         {
             var phone = await _context.Phones.FindAsync(phoneId);
             if (phone == null)
@@ -39,14 +41,19 @@ namespace MobileStoreApp.Controllers
                 return NotFound();
             }
 
+            //if (quantity > phone.Quantity)
+            //{
+            //    return View("../Shop/Details");
+            //}
+
+
             var orderItem = new OrderItem
             {
                 PhoneId = phone.PhoneId,
-                Quantity = 1, 
+                Quantity = quantity,
                 UnitPrice = phone.Price, 
-                Phone = phone
+                //Phone = phone
             };
-
             _context.OrderItems.Add(orderItem);
             await _context.SaveChangesAsync();
 
@@ -70,4 +77,3 @@ namespace MobileStoreApp.Controllers
 
     }
 }
-
