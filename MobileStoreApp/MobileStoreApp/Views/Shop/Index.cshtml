@@ -10,13 +10,13 @@
             <div class="card-body">
                 <h5 class="card-title">@phone.Name</h5>
                 <p class="card-text">@phone.Description.</p>
-                <span class="text-muted">@phone.Price.ToString("C")</span> 
-                <a href="@Url.Action("Details", "Shop", new { id = phone.PhoneId })" class="btn btn-sm btn-outline-secondary">View details</a> 
-                <br /> <br />
+                <span class="text-muted">Price per phone: @phone.Price.ToString("C")</span>
+                <p class="text-muted">Avaiable phones: @phone.Quantity</p> 
                 <form asp-controller="Cart" asp-action="AddToCart" method="post">
                     <input type="hidden" name="phoneId" value="@phone.PhoneId" />
                     <span>Quantity: </span>
                     <input style="width: 60px" type="number" name="quantity" min="1" value="1" /> <br /> <br />
+                    <a href="@Url.Action("Details", "Shop", new { id = phone.PhoneId })" class="btn btn-secondary">View details</a>
                     <button type="submit" class="btn btn-primary">Add to Cart</button>
                 </form> 
             </div>
@@ -24,30 +24,12 @@
     }
 </div>
 
-<script>
-    $(document).ready(function () {
-        $('#addToCart').click(function () {
-            var quantity = $('#quantity').val();
+@if (TempData["ErrorMessage"] != null)
+{
+    <script>
+        alert("@TempData["ErrorMessage"]");
+    </script>
+}
 
-            // Ajax call to check if the quantity is available in the database
-            $.ajax({
-                url: '/Cart/CheckAvailability', // Update with your API endpoint to check availability
-                method: 'POST',
-                data: { quantity: quantity },
-                success: function (response) {
-                    if (response.available) {
-                        // Add item to cart
-                        alert('Item added to cart successfully!');
-                    } else {
-                        // Show alert if quantity exceeds available stock
-                        alert('Sorry, we do not have enough stock for this quantity.');
-                    }
-                },
-                error: function (xhr, status, error) {
-                    // Handle error
-                    console.error(xhr.responseText);
-                }
-            });
-        });
-    });
-</script>
+
+

@@ -54,7 +54,7 @@ namespace MobileStoreApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PhoneId,Name,Description,MyProperty,Quantity")] Phone phone)
+        public async Task<IActionResult> Create([Bind("PhoneId,Name,Description,Price,Quantity")] Phone phone)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace MobileStoreApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PhoneId,Name,Description,MyProperty,Quantity")] Phone phone)
+        public async Task<IActionResult> Edit(int id, [Bind("PhoneId,Name,Description,Price,Quantity")] Phone phone)
         {
             if (id != phone.PhoneId)
             {

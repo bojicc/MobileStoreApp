@@ -28,6 +28,5 @@ namespace MobileStoreApp.Controllers
 
             return View(phone);
         }
-       
     }
 }

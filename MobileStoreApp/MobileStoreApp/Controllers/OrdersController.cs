@@ -57,46 +57,62 @@ namespace MobileStoreApp.Controllers
         // POST: Orders/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //[Authorize]
+        //public async Task<IActionResult> Create([Bind("OrderId,UserId,CreateDate")] Order order)
+        //{
+        //    var currentUser = await _userManager.GetUserAsync(User);
+        //    Order orderr = new Order
+        //    {
+        //        UserId = currentUser.Id,
+        //        CreateDate = DateTime.UtcNow,
+        //        OrderItems = new List<OrderItem>()
+        //    };
+
+        //    //order.UserId = user.Id;
+
+        //    ModelState.ClearValidationState("UserId");
+
+        //    if (TryValidateModel(order, "UserId"))
+        //    {
+        //        _context.Add(order);
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToAction(nameof(Index));
+        //    }
+
+        //    //if (ModelState.IsValid)
+        //    //{
+        //    //    _context.Add(order);
+        //    //    await _context.SaveChangesAsync();
+        //    //    return RedirectToAction(nameof(Index));
+        //    //}
+        //    ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", order.UserId);
+        //    return View(order);
+
+        //    //if (ModelState.IsValid)
+        //    //{
+        //    //    _context.Add(order);
+        //    //    await _context.SaveChangesAsync();
+        //    //    return RedirectToAction(nameof(Index));
+        //    //}
+        //    //ViewData["UserId"] = new SelectList(_context.Users, "UserName", "UserName", order.UserId);
+        //    //return View(order);
+        //}
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public async Task<IActionResult> Create([Bind("OrderId,CreateDate")] Order order)
+        public async Task<IActionResult> Create([Bind("OrderId,UserId,CreateDate")] Order order)
         {
-            var user = await _userManager.GetUserAsync(this.User);
-            order.UserId = user.Id;
-
-            ModelState.ClearValidationState("UserId");
-
-            if (TryValidateModel(order, "UserId"))
+            var currentUser = await _userManager.GetUserAsync(User);
+            var orderr = new Order
             {
-                _context.Add(order);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-
-            //if (ModelState.IsValid)
-            //{
-            //    _context.Add(order);
-            //    await _context.SaveChangesAsync();
-            //    return RedirectToAction(nameof(Index));
-            //}
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", order.UserId);
-            return View(order);
-
-
-
-
-
-
-            //if (ModelState.IsValid)
-            //{
-            //    _context.Add(order);
-            //    await _context.SaveChangesAsync();
-            //    return RedirectToAction(nameof(Index));
-            //}
-            //ViewData["UserId"] = new SelectList(_context.Users, "UserName", "UserName", order.UserId);
-            //return View(order);
+                UserId = currentUser.Id,
+                CreateDate = DateTime.UtcNow
+            };
+            return View(orderr);
         }
+
 
         // GET: Orders/Edit/5
         public async Task<IActionResult> Edit(int? id)

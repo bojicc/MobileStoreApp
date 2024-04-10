@@ -1,11 +1,65 @@
-﻿<h2>Confirmation Order</h2>
+﻿<form class="row g-3">
+  <div class="col-md-4">
+    <label for="validationDefault01" class="form-label">First name</label>
+    <input type="text" class="form-control" id="validationDefault01" value="" required>
+  </div>
+  <div class="col-md-4">
+    <label for="validationDefault02" class="form-label">Last name</label>
+    <input type="text" class="form-control" id="validationDefault02" value="" required>
+  </div>
+  <div class="col-md-4">
+    <label for="validationDefaultUsername" class="form-label">Username</label>
+    <div class="input-group">
+      <span class="input-group-text" id="inputGroupPrepend2"></span>
+      <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="validationDefault03" class="form-label">City</label>
+    <input type="text" class="form-control" id="validationDefault03" required>
+  </div>
+  <div class="col-md-3">
+    <label for="validationDefault04" class="form-label">State</label>
+    <select class="form-select" id="validationDefault04" required>
+      <option selected disabled value="">Choose...</option>
+      <option>Novi Sad</option>
+            <option>Beograd</option>
+            <option>Nis</option>
+            <option>Subotica</option>
+            <option>Kragujevac</option>
+            <option>Leskovac</option>
+    </select>
+  </div>
+  <div class="col-md-3">
+    <label for="validationDefault05" class="form-label">Zip</label>
+    <input type="text" class="form-control" id="validationDefault05" required>
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+      <label class="form-check-label" for="invalidCheck2">
+        Agree to terms and conditions
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+   @*  <button class="btn btn-primary" type="submit">Submit form</button> *@
+        <a href="@Url.Action("Confirm", "Checkout")" class="btn btn-primary">Submit</a>
+  </div>
+</form>
 
-<div class="container">
+
+
+@* <div class="container">
     <h2 class="mt-4">Checkout</h2>
     <form id="checkoutForm">
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="name">Surname:</label>
+            <input type="text" class="form-control" id="surname" name="surname" required>
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
@@ -16,21 +70,13 @@
             <input type="text" class="form-control" id="address" name="address" required>
         </div>
         <div class="form-group">
-            <label for="creditCard">Credit Card Number:</label>
-            <input type="text" class="form-control" id="creditCard" name="creditCard" required>
+            <label for="name">City:</label>
+            <input type="text" class="form-control" id="city" name="city" required>
         </div>
-        <div class="form-group">
-            <label for="expiryDate">Expiry Date:</label>
-            <input type="text" class="form-control" id="expiryDate" name="expiryDate" placeholder="MM/YYYY" required>
-        </div>
-        <div class="form-group">
-            <label for="cvv">CVV:</label>
-            <input type="text" class="form-control" id="cvv" name="cvv" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Complete Purchase</button>
-    </form>
-</div>
+        <br/> *@
+        @* <a href="@Url.Action("Confirm", "Checkout")" class="btn btn-success">Submit</a> *@
+        @* <button type="submit" class="btn btn-primary">Complete Purchase</button> *@
+@*     </form>
+</div> *@
 
-</div>
-
-<button type="submit" class="btn btn-success"><a href="@Url.Action("Confirm", "Checkout")">Submit</a></button>
+@* <button type="submit" class="btn btn-success"><a href="@Url.Action("Confirm", "Checkout")">Submit</a></button> *@
