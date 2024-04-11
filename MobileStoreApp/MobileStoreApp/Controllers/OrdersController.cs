@@ -50,7 +50,7 @@ namespace MobileStoreApp.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
+            ViewData["UserId"] = new SelectList(_context.ApplicationsUsers, "Id", "Id");
             return View();
         }
 
@@ -99,18 +99,30 @@ namespace MobileStoreApp.Controllers
         //    //ViewData["UserId"] = new SelectList(_context.Users, "UserName", "UserName", order.UserId);
         //    //return View(order);
         //}
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public async Task<IActionResult> Create([Bind("OrderId,UserId,CreateDate")] Order order)
+        public async Task<IActionResult> Create([Bind("OrderId,CreateDate")] Order order)
         {
             var currentUser = await _userManager.GetUserAsync(User);
-            var orderr = new Order
+            order.UserId = currentUser.Id;
+            //var orderr = new Order
+            //{
+            //    UserId = currentUser.Id,
+            //    CreateDate = DateTime.UtcNow
+            //};
+
+            ModelState.ClearValidationState("UserId");
+
+            if (TryValidateModel(order, "UserId"))
             {
-                UserId = currentUser.Id,
-                CreateDate = DateTime.UtcNow
-            };
-            return View(orderr);
+                _context.Add(order);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            //ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", order.UserId);
+            return View(order);
         }
 
 

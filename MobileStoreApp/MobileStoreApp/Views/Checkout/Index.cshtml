@@ -9,28 +9,20 @@
   </div>
   <div class="col-md-4">
     <label for="validationDefaultUsername" class="form-label">Username</label>
-    <div class="input-group">
-      <span class="input-group-text" id="inputGroupPrepend2"></span>
-      <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
-    </div>
+    <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <label for="validationDefault03" class="form-label">City</label>
     <input type="text" class="form-control" id="validationDefault03" required>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-4">
     <label for="validationDefault04" class="form-label">State</label>
     <select class="form-select" id="validationDefault04" required>
       <option selected disabled value="">Choose...</option>
-      <option>Novi Sad</option>
-            <option>Beograd</option>
-            <option>Nis</option>
-            <option>Subotica</option>
-            <option>Kragujevac</option>
-            <option>Leskovac</option>
+      <option>...</option>
     </select>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-4">
     <label for="validationDefault05" class="form-label">Zip</label>
     <input type="text" class="form-control" id="validationDefault05" required>
   </div>
@@ -43,40 +35,8 @@
     </div>
   </div>
   <div class="col-12">
-   @*  <button class="btn btn-primary" type="submit">Submit form</button> *@
-        <a href="@Url.Action("Confirm", "Checkout")" class="btn btn-primary">Submit</a>
+    <button class="btn btn-primary" type="submit"><a href="@Url.Action("Confirm","Checkout")"></a>Submit</button>
   </div>
 </form>
 
 
-
-@* <div class="container">
-    <h2 class="mt-4">Checkout</h2>
-    <form id="checkoutForm">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="name">Surname:</label>
-            <input type="text" class="form-control" id="surname" name="surname" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="address">Address:</label>
-            <input type="text" class="form-control" id="address" name="address" required>
-        </div>
-        <div class="form-group">
-            <label for="name">City:</label>
-            <input type="text" class="form-control" id="city" name="city" required>
-        </div>
-        <br/> *@
-        @* <a href="@Url.Action("Confirm", "Checkout")" class="btn btn-success">Submit</a> *@
-        @* <button type="submit" class="btn btn-primary">Complete Purchase</button> *@
-@*     </form>
-</div> *@
-
-@* <button type="submit" class="btn btn-success"><a href="@Url.Action("Confirm", "Checkout")">Submit</a></button> *@

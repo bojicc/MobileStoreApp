@@ -13,6 +13,9 @@ using Microsoft.CodeAnalysis.Scripting;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using Microsoft.CodeAnalysis;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Drawing;
+using System;
 
 namespace MobileStoreApp.Controllers
 {
@@ -39,65 +42,86 @@ namespace MobileStoreApp.Controllers
         [HttpPost]
         public async Task<IActionResult> AddToCart(int phoneId, int quantity)
         {
+            var user = await _userManager.GetUserAsync(this.User);
+            var activeOrder = _context.Orders
+               .Include(i => i.OrderItems)
+               .FirstOrDefault(i => i.UserId == user.Id);
+
+            if (activeOrder == null)
+            {
+                activeOrder = new Order
+                {
+                    UserId = user.Id,
+                    CreateDate = DateTime.Now,
+                    OrderItems = new List<OrderItem>()
+                };
+            
+                _context.Orders.Add(activeOrder);
+                await _context.SaveChangesAsync();
+            }
+
+
             var phone = await _context.Phones.FindAsync(phoneId);
-
-            //var user = await _userManager.GetUserAsync(this.User);
-
-            //var activeOrder = _context.Orders
-            //    .Include(i => i.OrderItems)
-            //    .FirstOrDefault(i => i.UserId == user.Id);
 
             if (phone == null)
             {
                 return NotFound();
             }
 
-            //if (quantity <= phone.Quantity)
-            //{
-            //    await _context.Entry(activeOrder).Reference(o => o.OrderItems).LoadAsync();
-
-            //    // Check if the book is already in the cart
-            //    var existingCartItem = activeOrder.OrderItems.FirstOrDefault(item => item.PhoneId == phoneId);
-            //    if (existingCartItem != null)
-            //    {
-            //        existingCartItem.Quantity += quantity;
-            //    }
-            //    else
-            //    {
-            //        // If not, add it to the cart
-            //        activeOrder.OrderItems.Add(new OrderItem { PhoneId = phoneId, Quantity = quantity, Phone = phone });
-            //    }
-            //    phone.Quantity -= quantity;
-            //    await _context.SaveChangesAsync();
-            //}
-            //else
-            //{
-            //    TempData["ErrorMessage"] = $"There are only {phone.Quantity} books available.";
-            //    ModelState.AddModelError("quantity", $"There are only {phone.Quantity} books available.");
-            //    return RedirectToAction("Index", "Shop", new { id = phoneId });
-            //}
-
-
-            if (quantity > phone.Quantity)
+            if (quantity <= phone.Quantity)
             {
-                TempData["ErrorMessage"] = "That number of phones are currenty unavailable.";
+                //await _context.Entry(activeOrder).Reference(o => o.OrderItems).LoadAsync();
+
+                // Check if the book is already in the cart
+                var existingCartItem = activeOrder.OrderItems.FirstOrDefault(item => item.PhoneId == phoneId);
+                if (existingCartItem != null)
+                {
+                    existingCartItem.Quantity += quantity;
+                }
+                else
+                {
+                    // If not, add it to the cart
+                    activeOrder.OrderItems.Add(new OrderItem { PhoneId = phoneId, Quantity = quantity, Phone = phone });
+                }
+                //phone.Quantity -= quantity;
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                TempData["ErrorMessage"] = $"There are only {phone.Quantity} books available.";
+                ModelState.AddModelError("quantity", $"There are only {phone.Quantity} books available.");
                 return RedirectToAction("Index", "Shop", new { id = phoneId });
             }
 
 
 
-            var orderItem = new OrderItem
-            {
-                PhoneId = phone.PhoneId,
-                Quantity = quantity,
-                UnitPrice = phone.Price, 
-                //Phone = phone
-            };
-            _context.OrderItems.Add(orderItem);
-            await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Index));
+            //if (quantity > phone.Quantity)
+            //{
+            //    TempData["ErrorMessage"] = "That number of phones are currenty unavailable.";
+            //    return RedirectToAction("Index", "Shop", new { id = phoneId });
+            //}
+            //else
+            //{
+            //    activeOrder.OrderItems.Add(new OrderItem { PhoneId = phoneId, Quantity = quantity, Phone = phone });
+            //    await _context.SaveChangesAsync();
+            //}
 
+
+          
+
+
+            //var orderItem = new OrderItem
+            //{
+            //    PhoneId = phone.PhoneId,
+            //    Quantity = quantity,
+            //    UnitPrice = phone.Price,
+            //    //Phone = phone
+            //};
+            //_context.OrderItems.Add(orderItem);
+
+
+            return RedirectToAction("Index","Cart");
 
         }
 
@@ -153,12 +177,13 @@ namespace MobileStoreApp.Controllers
                 }
 
             }
-
-            
-
-
             _context.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public IActionResult getCartItemCount()
+        {
+            return View(cartItems.Sum(item => item.Quantity));
         }
     }
 }

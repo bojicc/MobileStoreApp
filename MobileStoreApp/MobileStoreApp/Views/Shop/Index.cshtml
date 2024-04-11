@@ -1,15 +1,25 @@
 ﻿@model IEnumerable<MobileStoreApp.Data.Models.Phone>
 
-<h2>Shop</h2>
+<h2 class="text-center">Mobile Phone Shop</h2>
+
+
+<form asp-controller="Shop" asp-action="Index" method="get">
+    <div class="d-flex justify-content-end">
+        <input type="text" class="mb-5 mx-2 ps-2" name="filter" placeholder="Search OS or Manufacturer" style="width:250px; border-radius:7px" />
+        <button type="submit" class="btn btn-primary ml-5 mb-5">Filter</button>
+    </div>
+</form>
+
 
 <div class="row">
     @foreach (var phone in Model)
     {
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+        <div class="card mx-2 mb-4" style="width: 19rem;">
+            <img src="@phone.Picture" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">@phone.Name</h5>
                 <p class="card-text">@phone.Description.</p>
+                <p class="text-muted">OS: @phone.OperationSystem</p>
                 <span class="text-muted">Price per phone: @phone.Price.ToString("C")</span>
                 <p class="text-muted">Avaiable phones: @phone.Quantity</p> 
                 <form asp-controller="Cart" asp-action="AddToCart" method="post">

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "c5P4Q7GohZx35yRcX7VUbjUO1vvCa8Xz2YZf/HX9CX8=",
+  "Hash": "yatbKGRcVxoE+FVIZD3SoKOJC/+SY3FBs0zBDODJwbI=",
   "Source": "MobileStoreApp",
   "BasePath": "_content/MobileStoreApp",
   "Mode": "Default",
@@ -1250,6 +1250,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\lib\\bootstrap\\bootstrap.min.css",
+      "SourceId": "MobileStoreApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\",
+      "BasePath": "_content/MobileStoreApp",
+      "RelativePath": "lib/bootstrap/bootstrap.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\bootstrap.min.css"
     },
     {
       "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

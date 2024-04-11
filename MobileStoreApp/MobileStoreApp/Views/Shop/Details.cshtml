@@ -1,13 +1,16 @@
 ﻿@model MobileStoreApp.Data.Models.Phone
 
-<h2>@Model.Name</h2>
+<h2 class="mt-5">@Model.Name</h2>
 
 <div>
-    <img src="placeholder_image_url" alt="@Model.Name" style="max-width: 300px; max-height: 300px;" />
+    <img src="@Model.Picture" alt="@Model.Name" class="text-center" style="max-width: 300px; max-height: 300px;" />
 </div>
 
 <div>
     <p>@Model.Description</p>
+    <p>Operation System: @Model.OperationSystem</p>
     <p>Price: @Model.Price.ToString("C")</p>
     <p>Quantity in stock: @Model.Quantity</p>
 </div>
+
+<a href="@Url.Action("Index", "Shop")" class="btn btn-primary">Back to shop</a>

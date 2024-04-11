@@ -6,6 +6,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>Picture</th>
             <th>Name</th>
             <th>Description</th>
             <th>Price per unit</th>
@@ -18,16 +19,17 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td><img src="@item.Phone.Picture" style="height: 100px; width:100px"/></td>
                 <td>@item.Phone.Name</td>
                 <td>@item.Phone.Description</td>
-                <td>@item.UnitPrice.ToString("C")</td>
+                <td>@item.Phone.Price.ToString("C")</td>
                 <td>
                     <form asp-action="UpdateQuantity" asp-controller="Cart" method="post">
                         <input type="hidden" name="orderItemId" value="@item.OrderItemId" />
                         <input style="width: 60px" type="number" name="quantity" min="1" value="@item.Quantity" onchange="this.form.submit()" />
                     </form>
                 </td>
-                <td class="subtotal">@((item.UnitPrice * item.Quantity).ToString("C"))</td>
+                <td class="subtotal">@((item.Phone.Price * item.Quantity).ToString("C"))</td>
                 <td>
                     <form asp-action="RemoveFromCart" method="post">
                         <input type="hidden" name="orderItemId" value="@item.OrderItemId" />
@@ -39,8 +41,8 @@
         }
 
         <tr>
-            <td colspan="4">Total</td>
-            <td id="total">@Model.Sum(item => item.UnitPrice * item.Quantity).ToString("C")</td>
+            <td colspan="5">Total:</td>
+            <td id="total">@Model.Sum(item => item.Phone.Price * item.Quantity).ToString("C")</td>
         </tr>
     </tbody>
 </table>

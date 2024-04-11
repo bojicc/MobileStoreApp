@@ -14,6 +14,13 @@ namespace MobileStoreApp.Data.Models
 
         [Required]
         public string Name { get; set; }
+
+        [Required]
+        [Display(Name="Operation System")]
+        public string OperationSystem { get; set; }
+
+        public string Picture { get; set; }         
+
         [Required]
         public string Description { get; set; }
         [Required]
