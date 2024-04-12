@@ -16,18 +16,23 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Drawing;
 using System;
+using MobileStoreApp.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MobileStoreApp.Controllers
 {
+    [Authorize]
     public class CartController : Controller
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly ICartService _cartService;
 
-        public CartController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
+        public CartController(ApplicationDbContext context, UserManager<ApplicationUser> userManager, ICartService cartService)
         {
             _context = context; 
             _userManager = userManager;
+            _cartService = cartService;
         }
         private static List<OrderItem> cartItems = new List<OrderItem>();
 
@@ -35,6 +40,8 @@ namespace MobileStoreApp.Controllers
         public async Task<IActionResult> Index()
         {
             var orderItems = await _context.OrderItems.Include(oi => oi.Phone).ToListAsync();
+           //int cartItemCount = orderItems.Sum(oi => oi.Quantity);
+           // ViewBag.CartItemCount = cartItemCount;
             return View(orderItems);
         }
 
@@ -88,8 +95,8 @@ namespace MobileStoreApp.Controllers
             }
             else
             {
-                TempData["ErrorMessage"] = $"There are only {phone.Quantity} books available.";
-                ModelState.AddModelError("quantity", $"There are only {phone.Quantity} books available.");
+                TempData["ErrorMessage"] = $"There are only {phone.Quantity} phone available.";
+                ModelState.AddModelError("quantity", $"There are only {phone.Quantity} phones available.");
                 return RedirectToAction("Index", "Shop", new { id = phoneId });
             }
 
@@ -108,7 +115,7 @@ namespace MobileStoreApp.Controllers
             //}
 
 
-          
+
 
 
             //var orderItem = new OrderItem
@@ -120,6 +127,15 @@ namespace MobileStoreApp.Controllers
             //};
             //_context.OrderItems.Add(orderItem);
 
+
+
+
+            // Calculate the total count of items in the cart
+            int cartItemCount = _context.OrderItems.Sum(item => item.Quantity);
+
+            // Pass the cart item count to the view
+            ViewData["CartItemCount"] = cartItemCount;
+            //ViewBag.CartItemCount = _cartService.CartItemCount();
 
             return RedirectToAction("Index","Cart");
 

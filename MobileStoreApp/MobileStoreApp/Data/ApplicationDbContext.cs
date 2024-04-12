@@ -15,5 +15,6 @@ namespace MobileStoreApp.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<ApplicationUser> ApplicationsUsers { get; set; }
+        public DbSet<Comment> Comments { get; set; }
     }
 }

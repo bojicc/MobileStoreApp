@@ -233,6 +233,37 @@ namespace MobileStoreApp.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("MobileStoreApp.Data.Models.Comment", b =>
+                {
+                    b.Property<int>("CommnetId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CommnetId"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PhoneId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("CommnetId");
+
+                    b.HasIndex("PhoneId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("MobileStoreApp.Data.Models.Order", b =>
                 {
                     b.Property<int>("OrderId")
@@ -379,6 +410,25 @@ namespace MobileStoreApp.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("MobileStoreApp.Data.Models.Comment", b =>
+                {
+                    b.HasOne("MobileStoreApp.Data.Models.Phone", "Phone")
+                        .WithMany("Comments")
+                        .HasForeignKey("PhoneId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MobileStoreApp.Data.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Phone");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("MobileStoreApp.Data.Models.OrderItem", b =>
                 {
                     b.HasOne("MobileStoreApp.Data.Models.Order", null)
@@ -397,6 +447,11 @@ namespace MobileStoreApp.Data.Migrations
             modelBuilder.Entity("MobileStoreApp.Data.Models.Order", b =>
                 {
                     b.Navigation("OrderItems");
+                });
+
+            modelBuilder.Entity("MobileStoreApp.Data.Models.Phone", b =>
+                {
+                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }

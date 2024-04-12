@@ -27,5 +27,7 @@ namespace MobileStoreApp.Data.Models
         public decimal Price { get; set; }
         [Required]
         public int Quantity { get; set; }
+
+        public ICollection<Comment> Comments { get; set; }
     }
 }

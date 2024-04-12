@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using MobileStoreApp.Data;
 using MobileStoreApp.Data.Models;
 using MobileStoreApp.Data.Repositories;
+using MobileStoreApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,8 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IPhoneRepository, PhoneRepository>();
+builder.Services.AddScoped<ICartService, CartService>();
+
 
 var app = builder.Build();
 

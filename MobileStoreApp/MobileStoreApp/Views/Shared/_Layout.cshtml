@@ -69,15 +69,19 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Cart" asp-action="Index">
                                 <i class="fas fa-shopping-cart"></i>
-                                <span class="badge badge-pill badge-primary"></span>
+                                <span class="badge badge-pill badge-primary">@ViewData["CartItemCount"]</span>
                             </a>
                         </li>
+                       @*  <li class="nav-item">
+                            <partial name="_CartIcon" />
+                        </li> *@
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
