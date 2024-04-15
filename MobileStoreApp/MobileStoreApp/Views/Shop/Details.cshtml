@@ -16,7 +16,8 @@
 </div>
 
 <a href="@Url.Action("Index", "Shop")" class="btn btn-primary">Back to shop</a>
-<a href="@Url.Action("Compare", "Shop")" class="btn btn-primary">Compare phones</a>
+<a asp-controller="Shop" asp-action="Compare" asp-route-id="@Model.PhoneId" class="btn btn-primary">Compare Phones</a>
+
 
 <br /><br /> <br />
 <hr />

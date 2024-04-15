@@ -1,14 +1,59 @@
 ﻿@model MobileStoreApp.Data.Models.Phone
 
-<h2 class="mt-5">@Model.Name</h2>
+<div class="row">
+    <div class="col-md-6">
+        <h2 class="mt-5">@Model.Name</h2>
+        <div>
+            <img src="@Model.Picture" alt="@Model.Name" class="text-center" style="max-width: 300px; max-height: 300px;" />
+        </div>
 
-<div>
-    <img src="@Model.Picture" alt="@Model.Name" class="text-center" style="max-width: 300px; max-height: 300px;" />
+        <div>
+            <p>@Model.Description</p>
+            <p>Operation System: @Model.OperationSystem</p>
+            <p>Price: @Model.Price.ToString("C")</p>
+            <p>Quantity in stock: @Model.Quantity</p>
+        </div>
+    </div>
+
+    <div id="phoneDetails" class="col-md-6"></div>
 </div>
 
-<div>
-    <p>@Model.Description</p>
-    <p>Operation System: @Model.OperationSystem</p>
-    <p>Price: @Model.Price.ToString("C")</p>
-    <p>Quantity in stock: @Model.Quantity</p>
-</div>
+<div id="allPhonesContainer"></div>
+Uporedi sa: <button id="showAllPhones">Prikaži sve telefone</button>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#showAllPhones').click(function () {
+            $.ajax({
+                url: '/Shop/AllPhones', // Pretpostavka da postoji akcija "AllPhones" u kontroleru "Phone"
+                type: 'GET',
+                success: function (data) {
+                    $('#allPhonesContainer').html(data);
+                },
+                error: function () {
+                    alert('Došlo je do greške prilikom učitavanja svih telefona.');
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('body').on('click', '#phoneList a', function (e) {
+            e.preventDefault();
+            var url = $(this).attr('href');
+            $.ajax({
+                url: url,
+                type: 'GET',
+                success: function (data) {
+                    $('#phoneDetails').html(data);
+                },
+                error: function () {
+                    alert('Došlo je do greške prilikom učitavanja detalja telefona.');
+                }
+            });
+        });
+    });
+</script>

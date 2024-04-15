@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,12 +10,12 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace MobileStoreApp.Controllers
 {
-   
     public class ShopController : Controller
     {
         private readonly ApplicationDbContext _context;
         private readonly IPhoneRepository _phoneRepository;
         private readonly UserManager<ApplicationUser> _userManager;
+
 
         public ShopController(ApplicationDbContext context, IPhoneRepository phoneRepository, UserManager<ApplicationUser> userManager)
         {
@@ -49,16 +50,6 @@ namespace MobileStoreApp.Controllers
             return View(phone);
         }
 
-
-        public IActionResult Compare(int id)
-        {
-            var phone = _phoneRepository.GetPhoneById(id);
-            if (phone == null)
-                return NotFound();
-
-            return RedirectToAction("Compare", "Shop", new { id = id });
-        }
-
         [Authorize]
         public async Task<IActionResult> AddComment(int phoneId, string content)
         {
@@ -79,6 +70,31 @@ namespace MobileStoreApp.Controllers
             _context.Comments.Add(comment);
             await _context.SaveChangesAsync();
             return RedirectToAction("Details", "Shop", new {id = phoneId});
+        }
+
+        public IActionResult Compare(int id)
+        {
+            var phone = _context.Phones.FirstOrDefault(p => p.PhoneId == id);
+            if (phone == null)
+                return NotFound();
+
+            return View(phone);
+        }
+
+        public IActionResult AllPhones()
+        {
+            var phones = _phoneRepository.GetAllPhones(); // Pretpostavka da postoji servis koji vraća sve telefone
+            return PartialView("_AllPhonesPartial", phones); // Delimični pogled za prikaz svih telefona
+        }
+
+        public IActionResult Comparison(int id)
+        {
+            var phone = _phoneRepository.GetPhoneById(id); // Pretpostavka da postoji servis koji vraća telefon po ID-u
+            if (phone == null)
+            {
+                return NotFound();
+            }
+            return View(phone);
         }
     }
 }
