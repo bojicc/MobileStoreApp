@@ -83,13 +83,13 @@ namespace MobileStoreApp.Controllers
 
         public IActionResult AllPhones()
         {
-            var phones = _phoneRepository.GetAllPhones(); // Pretpostavka da postoji servis koji vraća sve telefone
-            return PartialView("_AllPhonesPartial", phones); // Delimični pogled za prikaz svih telefona
+            var phones = _phoneRepository.GetAllPhones(); 
+            return PartialView("_AllPhonesPartial", phones); 
         }
 
         public IActionResult Comparison(int id)
         {
-            var phone = _phoneRepository.GetPhoneById(id); // Pretpostavka da postoji servis koji vraća telefon po ID-u
+            var phone = _phoneRepository.GetPhoneById(id); 
             if (phone == null)
             {
                 return NotFound();

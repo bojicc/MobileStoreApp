@@ -1,6 +1,5 @@
 ﻿@model List<MobileStoreApp.Data.Models.OrderItem>
 
-
 <h2>Cart</h2>
 
 <table class="table">
@@ -37,17 +36,38 @@
                     </form>
                 </td>
             </tr>
-
+            @if (item.Quantity >= 4)
+            {
+                <tr>
+                    <td colspan="5">Discount:</td>
+                    <td>@(((item.Phone.Price * item.Quantity) * 0.15m).ToString("C"))</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5">Regular Price:</td>
+                    <td>@((item.Phone.Price * item.Quantity).ToString("C"))</td>
+                </tr>
+            }
         }
-
-        <tr>
-            <td colspan="5">Total:</td>
-            <td id="total">@Model.Sum(item => item.Phone.Price * item.Quantity).ToString("C")</td>
-        </tr>
+       
     </tbody>
 </table>
 
 @if (Model.Any())
+{
+    <div>
+        <h4>Total Cart Price: @(Model.Sum(item => item.Phone.Price * item.Quantity).ToString("C"))</h4>
+    </div>
+}
+else
+{
+    <h5 class="text-center">Your cart is empty.</h5>
+}
+<br />
+
+@* @if (Model.Any())
 {
     <form asp-action="Checkout" method="post">
         <a href="@Url.Action("Index", "Checkout")" class="btn btn-success">Checkout</a> <br />
@@ -56,9 +76,68 @@
 else
 {
     <h5 class="text-center">Your cart is empty.</h5>
-}
-<br>
-<a href="@Url.Action("Index", "Shop")" class="btn btn-primary">Continue Shopping</a>
+} *@
+
+
+<a href="@Url.Action("Index", "Shop")" class="btn btn-primary mb-5">Continue Shopping</a>
+
+<h5 class="mt-5">Customer data:</h5>
+<hr />
+<form class="row g-3">
+    <div class="col-md-4">
+        <label for="validationDefault01" class="form-label">First name</label>
+        <input type="text" class="form-control" id="validationDefault01" value="" required>
+    </div>
+    <div class="col-md-4">
+        <label for="validationDefault02" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="validationDefault02" value="" required>
+    </div>
+    <div class="col-md-4">
+        <label for="validationDefaultUsername" class="form-label">Username</label>
+        <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+    </div>
+    <div class="col-md-4">
+        <label for="validationDefault03" class="form-label">City</label>
+        <input type="text" class="form-control" id="validationDefault03" required>
+    </div>
+    <div class="col-md-4">
+        <label for="validationDefault04" class="form-label">State</label>
+        <select class="form-select" id="validationDefault04" required>
+            <option selected disabled value="">Choose...</option>
+            <option>...</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label for="validationDefault05" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="validationDefault05" required>
+    </div>
+    <div class="col-12">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+            <label class="form-check-label" for="invalidCheck2">
+                Agree to terms and conditions
+            </label>
+        </div>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-success mb-5" type="submit"><a href="@Url.Action("Ordered", "Cart")"></a>Submit</button>
+    </div>
+</form>
+@* <div class="d-flex justify-content-end">
+
+    @foreach(var item in Model)
+    {
+        @if(item.Quantity >= 4)
+        {
+            <h5 id="total">Total:@Model.Sum(item => item.Phone.Price * item.Quantity - (item.Phone.Price * item.Quantity * 0.15m)).ToString("C")</h5>
+        }
+        else
+        {
+            <h5 id="total">Total:@Model.Sum(item => item.Phone.Price * item.Quantity).ToString("C")</h5>
+        }
+    }
+</div> *@
+
 
 
 @if (TempData["ErrorMessage"] != null)

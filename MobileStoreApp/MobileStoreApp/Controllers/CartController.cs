@@ -30,7 +30,7 @@ namespace MobileStoreApp.Controllers
 
         public CartController(ApplicationDbContext context, UserManager<ApplicationUser> userManager, ICartService cartService)
         {
-            _context = context; 
+            _context = context;
             _userManager = userManager;
             _cartService = cartService;
         }
@@ -39,9 +39,9 @@ namespace MobileStoreApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var orderItems = await _context.OrderItems.Include(oi => oi.Phone).ToListAsync();
-           //int cartItemCount = orderItems.Sum(oi => oi.Quantity);
-           // ViewBag.CartItemCount = cartItemCount;
+            var orderItems = await _context.OrderItems.Include(oi => oi.Phone).Include(i => i.Order).ToListAsync();
+            //int cartItemCount = orderItems.Sum(oi => oi.Quantity);
+            // ViewBag.CartItemCount = cartItemCount;
             return View(orderItems);
         }
 
@@ -62,9 +62,9 @@ namespace MobileStoreApp.Controllers
                     CreateDate = DateTime.Now,
                     OrderItems = new List<OrderItem>()
                 };
-            
+
                 _context.Orders.Add(activeOrder);
-                await _context.SaveChangesAsync();
+                //await _context.SaveChangesAsync();
             }
 
 
@@ -92,6 +92,42 @@ namespace MobileStoreApp.Controllers
                 }
                 //phone.Quantity -= quantity;
                 await _context.SaveChangesAsync();
+
+                //var phoneCount = activeOrder.OrderItems.Where(item => item.PhoneId == phoneId).Sum(item => item.Quantity);
+                //if (phoneCount >= 4)
+                //{
+                //    var discount = phone.Price * 0.15m;
+                //    var totalPrice = activeOrder.OrderItems.Sum(item => item.Quantity * item.Phone.Price);
+                //    activeOrder.TotalPrice = totalPrice - discount;
+                //    await _context.SaveChangesAsync();
+                //}
+                //else
+                //{
+                //    activeOrder.OrderItems.Sum(item => item.Quantity * item.Phone.Price);
+                //    await _context.SaveChangesAsync();
+                //}
+                //    // Apply discount for one item
+                //    var discount = phone.Price * 0.15m; // 15% discount for each phone if quantity is 4 or more
+                //    var totalPrice = activeOrder.OrderItems.Sum(item => item.Quantity * item.Phone.Price);
+
+                //    // Find the latest added item for the same phone and update its unit total price
+                //    var latestCartItem = activeOrder.OrderItems.LastOrDefault(item => item.PhoneId == phoneId);
+                //    if (latestCartItem != null)
+                //    {
+                //        latestCartItem.UnitPrice -= discount; // Apply discount to the latest added item
+                //        await _context.SaveChangesAsync();
+                //    }
+                //}
+                // Provera da li korpa sada sadrži 4 ista telefona
+                //var phoneCount = activeOrder.OrderItems.Where(item => item.PhoneId == phoneId).Sum(item => item.Quantity);
+                //if (phoneCount >= 4)
+                //{
+                //    // Primeni popust od 15% na sve proizvode iste vrste u korpi
+                //    var discount = phone.Price * 0.15m; // 15% popusta za svaka 4 telefona
+                //    var totalPrice = activeOrder.OrderItems.Sum(item => item.Quantity * item.Phone.Price);
+                //    activeOrder.TotalPrice = totalPrice - discount;
+                //    await _context.SaveChangesAsync();
+                //}
             }
             else
             {
@@ -99,8 +135,6 @@ namespace MobileStoreApp.Controllers
                 ModelState.AddModelError("quantity", $"There are only {phone.Quantity} phones available.");
                 return RedirectToAction("Index", "Shop", new { id = phoneId });
             }
-
-
 
 
             //if (quantity > phone.Quantity)
@@ -114,10 +148,6 @@ namespace MobileStoreApp.Controllers
             //    await _context.SaveChangesAsync();
             //}
 
-
-
-
-
             //var orderItem = new OrderItem
             //{
             //    PhoneId = phone.PhoneId,
@@ -128,8 +158,6 @@ namespace MobileStoreApp.Controllers
             //_context.OrderItems.Add(orderItem);
 
 
-
-
             // Calculate the total count of items in the cart
             int cartItemCount = _context.OrderItems.Sum(item => item.Quantity);
 
@@ -137,7 +165,7 @@ namespace MobileStoreApp.Controllers
             ViewData["CartItemCount"] = cartItemCount;
             //ViewBag.CartItemCount = _cartService.CartItemCount();
 
-            return RedirectToAction("Index","Cart");
+            return RedirectToAction("Index", "Cart");
 
         }
 
@@ -200,6 +228,17 @@ namespace MobileStoreApp.Controllers
         public IActionResult getCartItemCount()
         {
             return View(cartItems.Sum(item => item.Quantity));
+        }
+
+        public IActionResult Ordered(int orderItemId)
+        {
+            var orderItem = _context.Orders.FindAsync(orderItemId);
+            if (orderItem != null)
+            {
+               
+            }
+            
+            return View(orderItem);
         }
     }
 }

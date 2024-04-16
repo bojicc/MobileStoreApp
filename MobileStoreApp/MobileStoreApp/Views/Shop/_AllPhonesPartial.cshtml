@@ -1,11 +1,9 @@
 ﻿@model List<MobileStoreApp.Data.Models.Phone>
 
-<h2>Svi telefoni</h2>
-
 <ul id="phoneList">
     @foreach (var phone in Model)
     {
-        <li><a href="@Url.Action("Comparison", "Shop", new { id = phone.PhoneId })">@phone.Name </a></li>
+        <li><a href="@Url.Action("Comparison", "Shop", new { id = phone.PhoneId })" class="btn btn-secondary mb-2">@phone.Name</a></li>
     }
 </ul>
 

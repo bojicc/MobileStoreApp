@@ -14,6 +14,11 @@ namespace MobileStoreApp.Data.Models
         public string UserId { get; set; }
         [Required]
         public DateTime CreateDate { get; set; } = DateTime.UtcNow;
+
+        public decimal TotalPrice { get; set; }
+
+        public bool Shipped { get; set; }
+
         public ICollection<OrderItem>? OrderItems { get; set; }
     }
 }

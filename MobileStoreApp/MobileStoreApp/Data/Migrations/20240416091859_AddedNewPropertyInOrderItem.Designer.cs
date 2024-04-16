@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MobileStoreApp.Data;
 
@@ -11,9 +12,11 @@ using MobileStoreApp.Data;
 namespace MobileStoreApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240416091859_AddedNewPropertyInOrderItem")]
+    partial class AddedNewPropertyInOrderItem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -274,9 +277,6 @@ namespace MobileStoreApp.Data.Migrations
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<bool>("Shipped")
-                        .HasColumnType("bit");
 
                     b.Property<decimal>("TotalPrice")
                         .HasColumnType("decimal(18,2)");

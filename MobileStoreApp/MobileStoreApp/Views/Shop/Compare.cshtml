@@ -18,15 +18,16 @@
     <div id="phoneDetails" class="col-md-6"></div>
 </div>
 
-<div id="allPhonesContainer"></div>
-Uporedi sa: <button id="showAllPhones">Prikaži sve telefone</button>
+<div id="allPhonesContainer" class="d-flex justify-content-center">
+    <button id="showAllPhones" class="btn btn-secondary">Comapre with</button>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
         $('#showAllPhones').click(function () {
             $.ajax({
-                url: '/Shop/AllPhones', // Pretpostavka da postoji akcija "AllPhones" u kontroleru "Phone"
+                url: '/Shop/AllPhones',
                 type: 'GET',
                 success: function (data) {
                     $('#allPhonesContainer').html(data);

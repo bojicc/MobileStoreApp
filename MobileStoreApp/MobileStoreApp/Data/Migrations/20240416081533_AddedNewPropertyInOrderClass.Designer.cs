@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MobileStoreApp.Data;
 
@@ -11,9 +12,11 @@ using MobileStoreApp.Data;
 namespace MobileStoreApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240416081533_AddedNewPropertyInOrderClass")]
+    partial class AddedNewPropertyInOrderClass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -275,9 +278,6 @@ namespace MobileStoreApp.Data.Migrations
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("Shipped")
-                        .HasColumnType("bit");
-
                     b.Property<decimal>("TotalPrice")
                         .HasColumnType("decimal(18,2)");
 
@@ -298,7 +298,7 @@ namespace MobileStoreApp.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderItemId"));
 
-                    b.Property<int>("OrderId")
+                    b.Property<int?>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<int>("PhoneId")
@@ -437,19 +437,15 @@ namespace MobileStoreApp.Data.Migrations
 
             modelBuilder.Entity("MobileStoreApp.Data.Models.OrderItem", b =>
                 {
-                    b.HasOne("MobileStoreApp.Data.Models.Order", "Order")
+                    b.HasOne("MobileStoreApp.Data.Models.Order", null)
                         .WithMany("OrderItems")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("OrderId");
 
                     b.HasOne("MobileStoreApp.Data.Models.Phone", "Phone")
                         .WithMany()
                         .HasForeignKey("PhoneId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Order");
 
                     b.Navigation("Phone");
                 });
