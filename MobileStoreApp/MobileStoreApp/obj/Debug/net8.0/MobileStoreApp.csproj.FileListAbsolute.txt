@@ -267,7 +267,6 @@ C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp\obj\Debug\
 C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp\obj\Debug\net8.0\MobileStoreApp.AssemblyInfoInputs.cache
 C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp\obj\Debug\net8.0\MobileStoreApp.AssemblyInfo.cs
 C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp\obj\Debug\net8.0\MobileStoreApp.csproj.CoreCompileInputs.cache
-C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp\obj\Debug\net8.0\MobileStoreApp.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp\obj\Debug\net8.0\MobileStoreApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp\obj\Debug\net8.0\MobileStoreApp.RazorAssemblyInfo.cache
 C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp\obj\Debug\net8.0\MobileStoreApp.RazorAssemblyInfo.cs
@@ -552,3 +551,4 @@ C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp\bin\Debug\
 C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Panonit\Desktop\MobileStoreApp\MobileStoreApp\MobileStoreApp\obj\Debug\net8.0\MobileStoreApp.MvcApplicationPartsAssemblyInfo.cs

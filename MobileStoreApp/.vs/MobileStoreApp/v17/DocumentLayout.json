@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{84B942F0-8201-4DD4-B158-2C9AE2AC322B}|MobileStoreApp.Tests\\MobileStoreApp.Tests.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84B942F0-8201-4DD4-B158-2C9AE2AC322B}|MobileStoreApp.Tests\\MobileStoreApp.Tests.csproj|solutionrelative:mobilestoreapp.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\views\\checkout\\confirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\views\\checkout\\confirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\views\\checkout\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\views\\checkout\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{84B942F0-8201-4DD4-B158-2C9AE2AC322B}|MobileStoreApp.Tests\\MobileStoreApp.Tests.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp.tests\\cartcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84B942F0-8201-4DD4-B158-2C9AE2AC322B}|MobileStoreApp.Tests\\MobileStoreApp.Tests.csproj|solutionrelative:mobilestoreapp.tests\\cartcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Confirm.cshtml",
-              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Checkout\\Confirm.cshtml",
-              "RelativeDocumentMoniker": "MobileStoreApp\\Views\\Checkout\\Confirm.cshtml",
-              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Checkout\\Confirm.cshtml",
-              "RelativeToolTip": "MobileStoreApp\\Views\\Checkout\\Confirm.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-16T14:01:20.276Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Checkout\\Index.cshtml",
-              "RelativeDocumentMoniker": "MobileStoreApp\\Views\\Checkout\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Checkout\\Index.cshtml",
-              "RelativeToolTip": "MobileStoreApp\\Views\\Checkout\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-16T14:01:17.987Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CheckoutController.cs",
-              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Controllers\\CheckoutController.cs",
-              "RelativeDocumentMoniker": "MobileStoreApp\\Controllers\\CheckoutController.cs",
-              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Controllers\\CheckoutController.cs",
-              "RelativeToolTip": "MobileStoreApp\\Controllers\\CheckoutController.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAiwCIAAAABAAAA",
+              "Title": "CartControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp.Tests\\CartControllerTests.cs",
+              "RelativeDocumentMoniker": "MobileStoreApp.Tests\\CartControllerTests.cs",
+              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp.Tests\\CartControllerTests.cs",
+              "RelativeToolTip": "MobileStoreApp.Tests\\CartControllerTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T14:00:57.09Z",
+              "WhenOpened": "2024-04-17T13:38:47.686Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CartController.cs",
-              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Controllers\\CartController.cs",
-              "RelativeDocumentMoniker": "MobileStoreApp\\Controllers\\CartController.cs",
-              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Controllers\\CartController.cs",
-              "RelativeToolTip": "MobileStoreApp\\Controllers\\CartController.cs",
-              "ViewState": "AQIAANIAAAAAAAAAAAAwwO0AAAAPAAAA",
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp.Tests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "MobileStoreApp.Tests\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp.Tests\\UnitTest1.cs",
+              "RelativeToolTip": "MobileStoreApp.Tests\\UnitTest1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T13:41:23.061Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Cart\\Index.cshtml",
-              "RelativeDocumentMoniker": "MobileStoreApp\\Views\\Cart\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Cart\\Index.cshtml",
-              "RelativeToolTip": "MobileStoreApp\\Views\\Cart\\Index.cshtml",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAAAGAAAABYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-16T13:36:54.868Z",
+              "WhenOpened": "2024-04-17T13:36:30.407Z",
               "EditorCaption": ""
             }
           ]

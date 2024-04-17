@@ -92,42 +92,6 @@ namespace MobileStoreApp.Controllers
                 }
                 //phone.Quantity -= quantity;
                 await _context.SaveChangesAsync();
-
-                //var phoneCount = activeOrder.OrderItems.Where(item => item.PhoneId == phoneId).Sum(item => item.Quantity);
-                //if (phoneCount >= 4)
-                //{
-                //    var discount = phone.Price * 0.15m;
-                //    var totalPrice = activeOrder.OrderItems.Sum(item => item.Quantity * item.Phone.Price);
-                //    activeOrder.TotalPrice = totalPrice - discount;
-                //    await _context.SaveChangesAsync();
-                //}
-                //else
-                //{
-                //    activeOrder.OrderItems.Sum(item => item.Quantity * item.Phone.Price);
-                //    await _context.SaveChangesAsync();
-                //}
-                //    // Apply discount for one item
-                //    var discount = phone.Price * 0.15m; // 15% discount for each phone if quantity is 4 or more
-                //    var totalPrice = activeOrder.OrderItems.Sum(item => item.Quantity * item.Phone.Price);
-
-                //    // Find the latest added item for the same phone and update its unit total price
-                //    var latestCartItem = activeOrder.OrderItems.LastOrDefault(item => item.PhoneId == phoneId);
-                //    if (latestCartItem != null)
-                //    {
-                //        latestCartItem.UnitPrice -= discount; // Apply discount to the latest added item
-                //        await _context.SaveChangesAsync();
-                //    }
-                //}
-                // Provera da li korpa sada sadrži 4 ista telefona
-                //var phoneCount = activeOrder.OrderItems.Where(item => item.PhoneId == phoneId).Sum(item => item.Quantity);
-                //if (phoneCount >= 4)
-                //{
-                //    // Primeni popust od 15% na sve proizvode iste vrste u korpi
-                //    var discount = phone.Price * 0.15m; // 15% popusta za svaka 4 telefona
-                //    var totalPrice = activeOrder.OrderItems.Sum(item => item.Quantity * item.Phone.Price);
-                //    activeOrder.TotalPrice = totalPrice - discount;
-                //    await _context.SaveChangesAsync();
-                //}
             }
             else
             {
@@ -230,15 +194,18 @@ namespace MobileStoreApp.Controllers
             return View(cartItems.Sum(item => item.Quantity));
         }
 
-        public IActionResult Ordered(int orderItemId)
+        public async Task <IActionResult> MarkAsShipped()
         {
-            var orderItem = _context.Orders.FindAsync(orderItemId);
-            if (orderItem != null)
+            var user = await _userManager.GetUserAsync(this.User);
+            var activeOrder = _context.Orders.FirstOrDefault(i => i.UserId == user.Id && i.Shipped == false);
+
+            if (activeOrder != null)
             {
-               
+                activeOrder.Shipped = true;
+                await _context.SaveChangesAsync();
             }
             
-            return View(orderItem);
+            return RedirectToAction("Confirm", "Checkout");
         }
     }
 }
