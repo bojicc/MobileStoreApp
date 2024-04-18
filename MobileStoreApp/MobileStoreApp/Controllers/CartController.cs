@@ -194,7 +194,7 @@ namespace MobileStoreApp.Controllers
             return View(cartItems.Sum(item => item.Quantity));
         }
 
-        public async Task <IActionResult> MarkAsShipped()
+        public async Task<IActionResult> MarkAsShipped()
         {
             var user = await _userManager.GetUserAsync(this.User);
             var activeOrder = _context.Orders.FirstOrDefault(i => i.UserId == user.Id && i.Shipped == false);
@@ -202,6 +202,7 @@ namespace MobileStoreApp.Controllers
             if (activeOrder != null)
             {
                 activeOrder.Shipped = true;
+                //activeOrder.TotalPrice = price;
                 await _context.SaveChangesAsync();
             }
             

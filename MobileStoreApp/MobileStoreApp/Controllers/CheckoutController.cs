@@ -13,12 +13,12 @@ namespace MobileStoreApp.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            return View("Index");
         }
 
         public IActionResult Confirm()
         {
-            return View();
+            return View("Confirm");
         }
 
         public IActionResult Delete(int orderItemId)

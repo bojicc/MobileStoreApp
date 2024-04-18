@@ -28,6 +28,6 @@ namespace MobileStoreApp.Data.Models
         [Required]
         public int Quantity { get; set; }
 
-        public ICollection<Comment> Comments { get; set; }
+        public ICollection<Comment>? Comments { get; set; }
     }
 }

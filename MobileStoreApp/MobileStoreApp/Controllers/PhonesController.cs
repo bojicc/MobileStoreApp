@@ -14,9 +14,9 @@ namespace MobileStoreApp.Controllers
     [Authorize(Roles = "Admin")]
     public class PhonesController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IApplicationDbContext _context;
 
-        public PhonesController(ApplicationDbContext context)
+        public PhonesController(IApplicationDbContext context)
         {
             _context = context;
         }

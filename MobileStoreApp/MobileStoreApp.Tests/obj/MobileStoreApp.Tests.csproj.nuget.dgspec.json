@@ -123,6 +123,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FakeItEasy": {
+              "target": "Package",
+              "version": "[8.2.0, )"
+            },
             "FluentAssertions": {
               "target": "Package",
               "version": "[6.12.0, )"

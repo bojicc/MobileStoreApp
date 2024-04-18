@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZVeTGsAEy4J9S4irg6hvZSD+6lHhNHCnYI2adVEzByfSt3y0hLj8QF5AeFD39apPhdxxcTqNDSr01MmAnL8GMw==",
+  "dgSpecHash": "ehQMjaavRBWLe1+6jezT+JFV0beSSC12FdgvA1Fr5Q9Ezf3co7r0S991uHZym7iWArve3DQtc56veefu1XPk1Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp.Tests\\MobileStoreApp.Tests.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Panonit\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\Panonit\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\Panonit\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
+    "C:\\Users\\Panonit\\.nuget\\packages\\fakeiteasy\\8.2.0\\fakeiteasy.8.2.0.nupkg.sha512",
     "C:\\Users\\Panonit\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
     "C:\\Users\\Panonit\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Panonit\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
