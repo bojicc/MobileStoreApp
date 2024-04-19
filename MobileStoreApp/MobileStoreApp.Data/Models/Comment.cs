@@ -15,6 +15,9 @@ namespace MobileStoreApp.Data.Models
         public string UserId { get; set; }
         public int PhoneId { get; set; }
         public string Content {  get; set; }
+
+        public int Rating { get; set; }
+
         public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
 
         public ApplicationUser User { get; set; }

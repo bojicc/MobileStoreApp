@@ -251,6 +251,9 @@ namespace MobileStoreApp.Data.Migrations
                     b.Property<int>("PhoneId")
                         .HasColumnType("int");
 
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");

@@ -24,6 +24,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Phone)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -42,6 +45,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Phone.Name)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.CommnetId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.CommnetId">Details</a> |

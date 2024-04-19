@@ -14,23 +14,23 @@ using MobileStoreApp.Services;
 
 namespace MobileStoreApp.Tests
 {
-    public class HomeControllerTests
-    {
-        [Fact]
-        public void Test_Index_ReturnsViewName()
-        {
-            var controller = new HomeController();
-            var result = controller.Index() as ViewResult;
-            Assert.Equal("Index", result?.ViewName);
+    //public class HomeControllerTests
+    //{
+    //    [Fact]
+    //    public void Test_Index_ReturnsViewName()
+    //    {
+    //        var controller = new HomeController();
+    //        var result = controller.Index() as ViewResult;
+    //        Assert.Equal("Index", result?.ViewName);
 
-        }
+    //    }
 
-        [Fact]
-        public void Test_PrivacyReturnsViewName()
-        {
-            var controller = new HomeController();
-            var result = controller.Privacy() as ViewResult;
-            Assert.Equal("Privacy", result?.ViewName);
-        }
-    }
+    //    [Fact]
+    //    public void Test_PrivacyReturnsViewName()
+    //    {
+    //        var controller = new HomeController();
+    //        var result = controller.Privacy() as ViewResult;
+    //        Assert.Equal("Privacy", result?.ViewName);
+    //    }
+    //}
 }

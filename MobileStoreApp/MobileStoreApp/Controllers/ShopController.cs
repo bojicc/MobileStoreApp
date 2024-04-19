@@ -51,7 +51,7 @@ namespace MobileStoreApp.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> AddComment(int phoneId, string content)
+        public async Task<IActionResult> AddComment(int phoneId, string content, int rating)
         {
             var user = await _userManager.GetUserAsync(this.User);
             //if(user == null)
@@ -64,6 +64,7 @@ namespace MobileStoreApp.Controllers
                 UserId = user.Id,
                 PhoneId = phoneId,
                 Content = content,
+                Rating = rating,
                 CreatedDate = DateTime.Now
             };
 

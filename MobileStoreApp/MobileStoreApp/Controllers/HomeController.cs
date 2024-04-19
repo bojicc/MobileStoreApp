@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MobileStoreApp.Data;
 using MobileStoreApp.Models;
 using System.Diagnostics;
 
@@ -6,16 +7,19 @@ namespace MobileStoreApp.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        //public HomeController(ILogger<HomeController> logger)
-        //{
-        //    _logger = logger;
-        //}
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
+        {
+            _logger = logger;
+            _context = context;
+        }
 
         public IActionResult Index()
         {
-            return View("Index");
+            var phones = _context.Phones.ToList();
+            return View(phones);
         }
 
         public IActionResult Privacy()

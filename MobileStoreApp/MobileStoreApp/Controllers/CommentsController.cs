@@ -64,7 +64,7 @@ namespace MobileStoreApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CommnetId,PhoneId,Content,CreatedDate")] Comment comment)
+        public async Task<IActionResult> Create([Bind("CommnetId,PhoneId,Content,CreatedDate,Rating")] Comment comment)
         {
             if (ModelState.IsValid)
             {
@@ -100,7 +100,7 @@ namespace MobileStoreApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CommnetId,UserId,PhoneId,Content,CreatedDate")] Comment comment)
+        public async Task<IActionResult> Edit(int id, [Bind("CommnetId,UserId,PhoneId,Content,CreatedDate,Raiting")] Comment comment)
         {
             if (id != comment.CommnetId)
             {

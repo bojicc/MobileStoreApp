@@ -3,7 +3,7 @@
 <h2 class="mt-5">@Model.Name</h2>
 
 <div>
-    <img src="@Model.Picture" alt="@Model.Name" class="text-center" style="max-width: 300px; max-height: 300px;" />
+    <img src="@Model.Picture" alt="@Model.Name" class="text-center" style="max-width: 350px; max-height: 350px;" />
 </div>
 
 <div>
@@ -11,6 +11,24 @@
     <p>Operation System: @Model.OperationSystem</p>
     <p>Price: @Model.Price.ToString("C")</p>
     <p>Quantity in stock: @Model.Quantity</p>
+    <p>Average rating: 
+        @{
+            if (Model.Comments.Count > 0)
+            {
+                var totalRating = 0;
+                foreach (var comment in Model.Comments)
+                {
+                    totalRating += comment.Rating;
+                }
+                var averageRating = (double)totalRating / Model.Comments.Count;
+                @Html.Raw(averageRating.ToString("0.0"))
+            }
+            else
+            {
+                @Html.Raw("No ratings yet")
+            }
+        }
+    </p>
 </div>
 
 <a href="@Url.Action("Index", "Shop")" class="btn btn-primary">Back to shop</a>
@@ -26,6 +44,7 @@
     @foreach (var item in Model.Comments)
     {
         <div style="border: 1px solid black; border-radius:10px;" class="mb-3 p-3">
+            <p class="ps-2 px-2 bg-light border-secondary">@item.Rating &#9733;</p>
             <p>@item.Content</p>
             <h6 class="text-muted">@item.User.UserName, @item.CreatedDate </h6>
         </div>
@@ -35,7 +54,21 @@
 <form asp-controller="Shop" asp-action="AddComment" method="post">
     <div class="form-group">
         <input type="hidden" name="phoneId", value="@Model.PhoneId"/>
-        <textarea class="form-control" id="content" name="content" rows="4" placeholder="Write Comment:"></textarea>
+
+        <div class="rating">
+            <input type="radio" id="star5" name="rating" value="5" />
+            <label for="star5" title="5 stars">&#9733;</label>
+            <input type="radio" id="star4" name="rating" value="4" />
+            <label for="star4" title="4 stars">&#9733;</label>
+            <input type="radio" id="star3" name="rating" value="3" />
+            <label for="star3" title="3 stars">&#9733;</label>
+            <input type="radio" id="star2" name="rating" value="2" />
+            <label for="star2" title="2 stars">&#9733;</label>
+            <input type="radio" id="star1" name="rating" value="1" />
+            <label for="star1" title="1 star">&#9733;</label>
+        </div>
+
+        <textarea class="form-control" id="content" name="content" rows="4" placeholder="Write Comment:" required></textarea>
     </div>
     <button type="submit" class="btn btn-success mt-3">Submit</button>
 </form>
