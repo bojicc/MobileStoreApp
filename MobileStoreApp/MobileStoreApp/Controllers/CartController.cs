@@ -194,7 +194,7 @@ namespace MobileStoreApp.Controllers
             return View(cartItems.Sum(item => item.Quantity));
         }
 
-        public async Task<IActionResult> MarkAsShipped()
+        public async Task<IActionResult> MarkAsShipped(int orderItemId)
         {
             var user = await _userManager.GetUserAsync(this.User);
             var activeOrder = _context.Orders.FirstOrDefault(i => i.UserId == user.Id && i.Shipped == false);
@@ -203,10 +203,15 @@ namespace MobileStoreApp.Controllers
             {
                 activeOrder.Shipped = true;
                 //activeOrder.TotalPrice = price;
+
+                var orderItemsToRemove = _context.OrderItems.Where(item => item.Order.OrderId == activeOrder.OrderId);
+                _context.OrderItems.RemoveRange(orderItemsToRemove);
+
+
                 await _context.SaveChangesAsync();
             }
             
-            return RedirectToAction("Confirm", "Checkout");
+            return RedirectToAction("Confirm", "Checkout", new { id = orderItemId });
         }
     }
 }
