@@ -5,6 +5,22 @@
       "PackagePath": "staticwebassets\\MobileStoreApp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\Honor-logo.jpg",
+      "PackagePath": "staticwebassets\\Honor-logo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\Motorola-Logo.jpg",
+      "PackagePath": "staticwebassets\\Motorola-Logo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\Xiaomi-Logo.jpg",
+      "PackagePath": "staticwebassets\\Xiaomi-Logo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\apple_logo.jpg",
+      "PackagePath": "staticwebassets\\apple_logo.jpg"
+    },
+    {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -247,6 +263,18 @@
     {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\samsung.jpg",
+      "PackagePath": "staticwebassets\\samsung.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\store.png",
+      "PackagePath": "staticwebassets\\store.png"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\storeIcon.png",
+      "PackagePath": "staticwebassets\\storeIcon.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MobileStoreApp.Microsoft.AspNetCore.StaticWebAssets.props",

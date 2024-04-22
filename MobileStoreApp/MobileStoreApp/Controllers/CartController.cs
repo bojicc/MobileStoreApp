@@ -199,19 +199,57 @@ namespace MobileStoreApp.Controllers
             var user = await _userManager.GetUserAsync(this.User);
             var activeOrder = _context.Orders.FirstOrDefault(i => i.UserId == user.Id && i.Shipped == false);
 
+            if (activeOrder == null)
+            {
+                activeOrder = new Order
+                {
+                    UserId = user.Id,
+                    CreateDate = DateTime.Now,
+                    OrderItems = new List<OrderItem>()
+                };
+                _context.Orders.Add(activeOrder);
+            }
             if (activeOrder != null)
             {
+
                 activeOrder.Shipped = true;
-                //activeOrder.TotalPrice = price;
 
                 var orderItemsToRemove = _context.OrderItems.Where(item => item.Order.OrderId == activeOrder.OrderId);
+
+                decimal totalPrice = _context.OrderItems.Sum(item => item.Phone.Price * item.Quantity);
+                activeOrder.TotalPrice = totalPrice;
+
                 _context.OrderItems.RemoveRange(orderItemsToRemove);
-
-
-                await _context.SaveChangesAsync();
+                
             }
-            
+            await _context.SaveChangesAsync();
+
             return RedirectToAction("Confirm", "Checkout", new { id = orderItemId });
         }
+
+
+        //public async Task<IActionResult> MarkAsShipped(int orderItemId)
+        //{
+        //    var user = await _userManager.GetUserAsync(this.User);
+        //    var activeOrder = _context.Orders.FirstOrDefault(i => i.UserId == user.Id && i.Shipped == false);
+
+        //    if (activeOrder != null)
+        //    {
+
+        //        activeOrder.Shipped = true;
+
+        //        var orderItemsToRemove = _context.OrderItems.Where(item => item.Order.OrderId == activeOrder.OrderId);
+
+        //        decimal totalPrice = _context.OrderItems.Sum(item => item.Phone.Price * item.Quantity);
+        //        activeOrder.TotalPrice = totalPrice;
+
+        //        _context.OrderItems.RemoveRange(orderItemsToRemove);
+
+
+        //        await _context.SaveChangesAsync();
+        //    }
+
+        //    return RedirectToAction("Confirm", "Checkout", new { id = orderItemId });
+        //}
     }
 }

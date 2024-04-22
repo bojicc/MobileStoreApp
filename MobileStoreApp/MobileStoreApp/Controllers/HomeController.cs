@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MobileStoreApp.Data;
 using MobileStoreApp.Models;
 using System.Diagnostics;
@@ -18,8 +19,13 @@ namespace MobileStoreApp.Controllers
 
         public IActionResult Index()
         {
-            var phones = _context.Phones.ToList();
-            return View(phones);
+            var phones = _context.Phones.Include(p => p.Comments).ToList();
+
+            var phonesWithHighRating = phones.Where(p => p.Comments.Any())
+                                     .Where(p => p.Comments.Average(c => c.Rating) > 4)
+                                     .ToList();
+
+            return View(phonesWithHighRating);
         }
 
         public IActionResult Privacy()

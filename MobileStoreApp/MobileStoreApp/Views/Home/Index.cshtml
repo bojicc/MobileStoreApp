@@ -1,8 +1,15 @@
 ﻿@model IEnumerable<MobileStoreApp.Data.Models.Phone>
 
-<h2 class="text-center">CoreCell Mobile</h2>
+@* <div class="card mb-3">
+    <div class="card-body">
+        <h4 class="card-title text-center">Welcome to CoreCell Mobile, our mobile phone store!</h4> <br />
+        <p class="card-text">
+        <p>Here at CoreCell Mobile, we bring you the latest and most popular mobile phones from the world of technology. Whether you're seeking cutting-edge smartphones with the latest features, dependable devices with exceptional performance, or simply wish to explore the newest trends in mobile technology, we're here to assist you in finding the perfect phone to meet your needs.</p>
+        <p>Our dedication to mobile phones is evident in our extensive selection of products, ranging from leading brands to the latest innovations. Whether you're a tech enthusiast, a business professional, or simply want to stay connected with your loved ones, our team of experts is available to offer support and recommendations to ensure you make the best decision when selecting your new mobile device.</p>
+        <p>Enjoy browsing our range of offerings, and don't hesitate to reach out if you have any questions or require additional information. Thank you for choosing CoreCell Mobile for all your mobile phone needs.</p>
+        </p>
+    </div>
 
-<div class="card mb-3">
     <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
             @for (int i = 0; i < Model.Count(); i++)
@@ -10,12 +17,17 @@
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@i" class="@(i == 0 ? "active" : "")" aria-current="true" aria-label="Slide @(i + 1)"></button>
             }
         </div>
-        <div class="carousel-inner" style="max-height:500px;">
-            @foreach (var phone in Model@* .Where(p => p.Comments.Average(c => c.Rating) > 4) *@)
+
+        <h5 class="text-center mt-5">Top Rated Phones</h5>
+
+        <div class="carousel-inner" >
+            @foreach (var phone in Model)
             {
                 <div class="carousel-item @(phone == Model.First() ? "active" : "")">
-                    <img src="@phone.Picture" class="d-block w-100" alt="@phone.Name" style="max-height:500px;">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="d-flex justify-content-center align-items-center mb-5" style="height: 350px;">
+                       <img src="@phone.Picture" alt="@phone.Name" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                    </div>
+                     <div class="carousel-caption d-none d-md-block bg-secondary mt-5" style="height:100px;">
                         <h5 class="text-light">@phone.Name</h5>
                         <p class="text-light">Price: @phone.Price.ToString("C")</p>
                     </div>
@@ -23,51 +35,80 @@
             }
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="carousel-control-prev-icon" style="background-color:gray;" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="carousel-control-next-icon" style="background-color:gray;" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <div class="card-body">
-        <h5 class="card-title text-center">Welcome to CoreCell Mobile, our mobile phone store!</h5> <br />
-        <p class="card-text">
-            <p>Here at CoreCell Mobile, we bring you the latest and most popular mobile phones from the world of technology. Whether you're seeking cutting-edge smartphones with the latest features, dependable devices with exceptional performance, or simply wish to explore the newest trends in mobile technology, we're here to assist you in finding the perfect phone to meet your needs.</p>
-            <p>Our dedication to mobile phones is evident in our extensive selection of products, ranging from leading brands to the latest innovations. Whether you're a tech enthusiast, a business professional, or simply want to stay connected with your loved ones, our team of experts is available to offer support and recommendations to ensure you make the best decision when selecting your new mobile device.</p>
-            <p>Enjoy browsing our range of offerings, and don't hesitate to reach out if you have any questions or require additional information. Thank you for choosing CoreCell Mobile for all your mobile phone needs.</p>
-        </p>
+</div> *@
+
+
+<div class="card card-body">
+    <h4 class="card-title text-center">Welcome to CoreCell Mobile, our mobile phone store!</h4> <br />
+    <p class="card-text">
+    <p>Here at CoreCell Mobile, we bring you the latest and most popular mobile phones from the world of technology. Whether you're seeking cutting-edge smartphones with the latest features, dependable devices with exceptional performance, or simply wish to explore the newest trends in mobile technology, we're here to assist you in finding the perfect phone to meet your needs.</p>
+    <p>Our dedication to mobile phones is evident in our extensive selection of products, ranging from leading brands to the latest innovations. Whether you're a tech enthusiast, a business professional, or simply want to stay connected with your loved ones, our team of experts is available to offer support and recommendations to ensure you make the best decision when selecting your new mobile device.</p>
+    <p>Enjoy browsing our range of offerings, and don't hesitate to reach out if you have any questions or require additional information. Thank you for choosing CoreCell Mobile for all your mobile phone needs.</p>
+    </p>
+</div>
+
+
+<div class="container-fluid bg-light p-3 mb-5 ">
+    <div class="d-flex justify-content-between text-center">
+        <div class="circle">
+            <img src="~/apple_logo.jpg"  />
+        </div>
+        <div class="circle">
+            <img src="~/samsung.jpg" />
+        </div>
+        <div class="circle">
+            <img src="~/Xiaomi-Logo.jpg" />
+        </div>
+        <div class="circle">
+            <img src="~/Honor-logo.jpg" />
+        </div>
+        <div class="circle">
+            <img src="~/Motorola-Logo.jpg" />
+        </div>
     </div>
 </div>
 
 
-@* <div id="carouselExampleCaptions" class="carousel slide">
-    <div class="carousel-indicators">
-        @for (int i = 0; i < Model.Count(); i++)
-        {
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@i" class="@(i == 0 ? "active" : "")" aria-current="true" aria-label="Slide @(i + 1)"></button>
-        }
-    </div>
-    <div class="carousel-inner" style="max-height:500px;">
-        @foreach(var phone in Model)
-        {
-            <div class="carousel-item @(phone == Model.First() ? "active" : "")">
-                <img src="@phone.Picture" class="d-block w-100" alt="@phone.Name" style="max-height:500px; width:200px">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>@phone.Name</h5>
-                    <p>@phone.Price</p>
+<h4 class="mt-5 mb-3">Top Rated Phones</h4>
+
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="container">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col">
+                            <div class="card">
+                                <a href="@Url.Action("Details", "Shop", new { id = item.PhoneId })">
+                                    <img src="@item.Picture" class="card-img-top" alt="@item.Name" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                                </a>     
+                                <div class="card-body">
+                                    <h5 class="card-title">@item.Name</h5>
+                                    <p class="card-text">@item.Price.ToString("C")</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
-        }
+        </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
 </div>
- *@

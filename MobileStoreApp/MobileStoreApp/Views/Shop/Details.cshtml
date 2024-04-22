@@ -38,7 +38,34 @@
 <br /><br /> <br />
 <hr />
 
-<h4>Comments:</h4>
+
+<div class="container">
+    <h4>Comments:</h4>
+    @if (Model.Comments != null)
+    {
+        @foreach (var item in Model.Comments)
+        {
+            <div class="comment-container mb-4">
+                <div class="card border-dark">
+                    <div class="card-header bg-dark text-light">
+                        <span class="fw-bold">@item.User.UserName</span>
+                        <span class="float-end">@item.CreatedDate.ToString("dd.MM.yyyy")</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">@item.Content</p>
+                        <div class="rating">
+                            @for (int i = 0; i < item.Rating; i++)
+                            {
+                                <span class="star">&#9733;</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+@* <h4>Comments:</h4>
 @if(Model.Comments != null)
 {
     @foreach (var item in Model.Comments)
@@ -49,7 +76,7 @@
             <h6 class="text-muted">@item.User.UserName, @item.CreatedDate </h6>
         </div>
     }
-}
+} *@
 
 <form asp-controller="Shop" asp-action="AddComment" method="post">
     <div class="form-group">
