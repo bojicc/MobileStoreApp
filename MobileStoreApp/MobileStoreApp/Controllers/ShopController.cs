@@ -24,18 +24,42 @@ namespace MobileStoreApp.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult Index(string filter)
+        public IActionResult Index(string filter, string sort)
         {
-
             var phones = _phoneRepository.GetAllPhones();
 
             if (!string.IsNullOrEmpty(filter))
             {
                 phones = phones.Where(p => p.OperationSystem.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 || p.Name.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
-
             }
+
+            switch (sort)
+            {
+                case "highestPrice":
+                    phones = phones.OrderByDescending(p => p.Price).ToList();
+                    break;
+                case "lowestPrice":
+                    phones = phones.OrderBy(p => p.Price).ToList();
+                    break;
+                default:
+                    break;
+            }
+
             return View(phones);
         }
+
+        //public IActionResult Index(string filter)
+        //{
+        //    var phones = _phoneRepository.GetAllPhones();
+
+        //    if (!string.IsNullOrEmpty(filter))
+        //    {
+        //        phones = phones.Where(p => p.OperationSystem.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 || p.Name.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+
+        //    }
+        //    return View(phones);
+
+        //}
 
         public IActionResult Details(int id)
         {

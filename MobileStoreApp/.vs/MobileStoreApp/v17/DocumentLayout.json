@@ -1,122 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\data\\repositories\\iphonerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\data\\repositories\\iphonerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\data\\repositories\\phonerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\data\\repositories\\phonerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\data\\repositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\data\\repositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\controllers\\phonescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\controllers\\phonescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 224,
-          "SelectedChildIndex": 5,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PhonesController.cs",
-              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Controllers\\PhonesController.cs",
-              "RelativeDocumentMoniker": "MobileStoreApp\\Controllers\\PhonesController.cs",
-              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Controllers\\PhonesController.cs",
-              "RelativeToolTip": "MobileStoreApp\\Controllers\\PhonesController.cs",
-              "ViewState": "AQIAAIAAAAAAAAAAAAAAwFoAAAB8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T13:31:32.888Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "MobileStoreApp\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "MobileStoreApp\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABsAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T13:28:14.794Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IOrderRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Data\\Repositories\\IOrderRepository.cs",
-              "RelativeDocumentMoniker": "MobileStoreApp\\Data\\Repositories\\IOrderRepository.cs",
-              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Data\\Repositories\\IOrderRepository.cs",
-              "RelativeToolTip": "MobileStoreApp\\Data\\Repositories\\IOrderRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T13:21:02.808Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PhoneRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Data\\Repositories\\PhoneRepository.cs",
-              "RelativeDocumentMoniker": "MobileStoreApp\\Data\\Repositories\\PhoneRepository.cs",
-              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Data\\Repositories\\PhoneRepository.cs",
-              "RelativeToolTip": "MobileStoreApp\\Data\\Repositories\\PhoneRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T13:20:46.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IPhoneRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Data\\Repositories\\IPhoneRepository.cs",
-              "RelativeDocumentMoniker": "MobileStoreApp\\Data\\Repositories\\IPhoneRepository.cs",
-              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Data\\Repositories\\IPhoneRepository.cs",
-              "RelativeToolTip": "MobileStoreApp\\Data\\Repositories\\IPhoneRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T13:20:37.643Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CartController.cs",
-              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Controllers\\CartController.cs",
-              "RelativeDocumentMoniker": "MobileStoreApp\\Controllers\\CartController.cs",
-              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Controllers\\CartController.cs",
-              "RelativeToolTip": "MobileStoreApp\\Controllers\\CartController.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAQwDAAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T12:21:08.807Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

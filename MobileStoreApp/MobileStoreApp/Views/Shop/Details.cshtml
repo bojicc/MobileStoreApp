@@ -1,17 +1,18 @@
 ﻿@model MobileStoreApp.Data.Models.Phone
 
-<h2 class="mt-5">@Model.Name</h2>
+<h3 class="mt-5">@Model.Name</h3>
 
 <div>
     <img src="@Model.Picture" alt="@Model.Name" class="text-center" style="max-width: 350px; max-height: 350px;" />
 </div>
 
 <div>
-    <p>@Model.Description</p>
-    <p>Operation System: @Model.OperationSystem</p>
-    <p>Price: @Model.Price.ToString("C")</p>
-    <p>Quantity in stock: @Model.Quantity</p>
-    <p>Average rating: 
+    <p><span class="fw-bold">Description: </span> @Model.Description</p>
+    <p><span class="fw-bold">Operation System: </span> @Model.OperationSystem</p>
+    <p><span class="fw-bold">Price: </span> @Model.Price.ToString("C")</p>
+    <p><span class="fw-bold">Quantity in stock: </span> @Model.Quantity</p>
+    <p>
+        <span class="fw-bold">Average rating: </span>
         @{
             if (Model.Comments.Count > 0)
             {
@@ -65,18 +66,6 @@
         }
     }
 </div>
-@* <h4>Comments:</h4>
-@if(Model.Comments != null)
-{
-    @foreach (var item in Model.Comments)
-    {
-        <div style="border: 1px solid black; border-radius:10px;" class="mb-3 p-3">
-            <p class="ps-2 px-2 bg-light border-secondary">@item.Rating &#9733;</p>
-            <p>@item.Content</p>
-            <h6 class="text-muted">@item.User.UserName, @item.CreatedDate </h6>
-        </div>
-    }
-} *@
 
 <form asp-controller="Shop" asp-action="AddComment" method="post">
     <div class="form-group">

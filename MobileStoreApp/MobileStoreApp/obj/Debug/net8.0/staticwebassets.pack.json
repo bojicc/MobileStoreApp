@@ -265,6 +265,14 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\mobile-phones-store-generative-a.jpg",
+      "PackagePath": "staticwebassets\\mobile-phones-store-generative-a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\neil-soni-6wdRuK7bVTE-unsplash.jpg",
+      "PackagePath": "staticwebassets\\neil-soni-6wdRuK7bVTE-unsplash.jpg"
+    },
+    {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\samsung.jpg",
       "PackagePath": "staticwebassets\\samsung.jpg"
     },

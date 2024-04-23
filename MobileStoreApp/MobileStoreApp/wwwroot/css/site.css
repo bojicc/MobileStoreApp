@@ -19,6 +19,11 @@ html {
 
 body {
   margin-bottom: 60px;
+/*  background-image: url(../neil-soni-6wdRuK7bVTE-unsplash.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center*/
+
 }
 
 
@@ -29,25 +34,26 @@ body {
     justify-content: flex-end;
 }
 
-    .rating input {
-        display: none;
-    }
+.rating input {
+    display: none;
+}
 
-    .rating label {
-        cursor: pointer;
-        font-size: 40px;
-        color: #ccc;
-        transition: color 0.3s;
-    }
+.rating label {
+    cursor: pointer;
+    font-size: 40px;
+    color: #ccc;
+    transition: color 0.3s;
+}
 
-    .rating input:checked ~ label {
-        color: #fdd835; /* Žuta boja */
-    }
+.rating input:checked ~ label {
+    color: #fdd835; 
+}
 
-    .rating label:hover,
-    .rating label:hover ~ label {
-        color: #fdd835; /* Promjena boje na hover */
-    }
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #fdd835; 
+}
+
 
 .comment-container {
     border: 1px solid #dee2e6;
@@ -72,6 +78,7 @@ body {
 }
 
 
+
 .circle {
     width: 120px;
     height: 120px;
@@ -85,4 +92,49 @@ body {
     margin: auto;
     object-fit: contain;
 }
+.circle {
+    position: relative;
+}
+
+.circle img {
+    transition: transform 0.3s ease; 
+}
+
+.circle img:hover {
+    transform: scale(1.20); 
+}
+
+
+#back-to-top-btn {
+    display: none; 
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #2C3E50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+
+#homeDiv{
+    padding: 30px;
+    text-align: justify;
+    border-radius:35px
+}
+
+
+
+.topRatedPhones {
+    transition: transform 0.3s ease;
+}
+.topRatedPhones:hover {
+    transform: scale(1.10);
+}
+
 

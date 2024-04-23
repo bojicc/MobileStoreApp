@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MobileStoreApp.Data.Models.Phone>
+
+<h4 class="mt-5 mb-4 text-center">Phones of the manufacturer in the picture</h4>
+
+<div class="row">
+    @foreach (var phone in Model)
+    {
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <img src="@phone.Picture" class="card-img-top" alt="...">
+                    <h5 class="card-title">@phone.Name</h5>
+                    <p class="card-text">Price: @phone.Price.ToString("C")</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<a href="@Url.Action("Index", "Home")" class="btn btn-primary">Back</a>

@@ -40,8 +40,8 @@ namespace MobileStoreApp.Controllers
         public async Task<IActionResult> Index()
         {
             var orderItems = await _context.OrderItems.Include(oi => oi.Phone).Include(i => i.Order).ToListAsync();
-            //int cartItemCount = orderItems.Sum(oi => oi.Quantity);
-            // ViewBag.CartItemCount = cartItemCount;
+            int cartItemCount = orderItems.Sum(oi => oi.Quantity);
+            ViewBag.CartItemCount = cartItemCount;
             return View(orderItems);
         }
 
@@ -101,31 +101,8 @@ namespace MobileStoreApp.Controllers
             }
 
 
-            //if (quantity > phone.Quantity)
-            //{
-            //    TempData["ErrorMessage"] = "That number of phones are currenty unavailable.";
-            //    return RedirectToAction("Index", "Shop", new { id = phoneId });
-            //}
-            //else
-            //{
-            //    activeOrder.OrderItems.Add(new OrderItem { PhoneId = phoneId, Quantity = quantity, Phone = phone });
-            //    await _context.SaveChangesAsync();
-            //}
-
-            //var orderItem = new OrderItem
-            //{
-            //    PhoneId = phone.PhoneId,
-            //    Quantity = quantity,
-            //    UnitPrice = phone.Price,
-            //    //Phone = phone
-            //};
-            //_context.OrderItems.Add(orderItem);
-
-
-            // Calculate the total count of items in the cart
             int cartItemCount = _context.OrderItems.Sum(item => item.Quantity);
 
-            // Pass the cart item count to the view
             ViewData["CartItemCount"] = cartItemCount;
             //ViewBag.CartItemCount = _cartService.CartItemCount();
 
@@ -154,11 +131,11 @@ namespace MobileStoreApp.Controllers
             var product = await _context.Phones.FindAsync(phoneId);
             if (product != null && product.Quantity >= quantity)
             {
-                return true; // Product is available
+                return true;
             }
             else
             {
-                return false; // Product is not available
+                return false; 
             }
         }
 
@@ -214,16 +191,13 @@ namespace MobileStoreApp.Controllers
 
                 activeOrder.Shipped = true;
 
-                var orderItemsToRemove = _context.OrderItems.Where(item => item.Order.OrderId == activeOrder.OrderId);
+                var orderItemsToRemove = _context.OrderItems.Where(item => item.OrderId == activeOrder.OrderId);
+                _context.OrderItems.RemoveRange(orderItemsToRemove);
 
                 decimal totalPrice = _context.OrderItems.Sum(item => item.Phone.Price * item.Quantity);
                 activeOrder.TotalPrice = totalPrice;
-
-                _context.OrderItems.RemoveRange(orderItemsToRemove);
-                
+                await _context.SaveChangesAsync();
             }
-            await _context.SaveChangesAsync();
-
             return RedirectToAction("Confirm", "Checkout", new { id = orderItemId });
         }
 

@@ -3,7 +3,7 @@
 <ul id="phoneList">
     @foreach (var phone in Model)
     {
-        <li><a href="@Url.Action("Comparison", "Shop", new { id = phone.PhoneId })" class="btn btn-secondary mb-2">@phone.Name</a></li>
+        <a href="@Url.Action("Comparison", "Shop", new { id = phone.PhoneId })" class="btn btn-primary mb-2">@phone.Name</a>
     }
 </ul>
 

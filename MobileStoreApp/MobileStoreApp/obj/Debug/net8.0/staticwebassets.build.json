@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BqmWtk2t35GEWWyNOdXur2jM1FQie2YVpsVpdtZvvO8=",
+  "Hash": "d/z4Y9ta6Ha5mS8dn4TOBc1OaRJUePwCs98bGl7gnFA=",
   "Source": "MobileStoreApp",
   "BasePath": "_content/MobileStoreApp",
   "Mode": "Default",
@@ -2392,6 +2392,25 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\mobile-phones-store-generative-a.jpg",
+      "SourceId": "MobileStoreApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\",
+      "BasePath": "_content/MobileStoreApp",
+      "RelativePath": "mobile-phones-store-generative-a.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\mobile-phones-store-generative-a.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\Motorola-Logo.jpg",
       "SourceId": "MobileStoreApp",
       "SourceType": "Discovered",
@@ -2409,6 +2428,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Motorola-Logo.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\neil-soni-6wdRuK7bVTE-unsplash.jpg",
+      "SourceId": "MobileStoreApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\",
+      "BasePath": "_content/MobileStoreApp",
+      "RelativePath": "neil-soni-6wdRuK7bVTE-unsplash.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\neil-soni-6wdRuK7bVTE-unsplash.jpg"
     },
     {
       "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\samsung.jpg",

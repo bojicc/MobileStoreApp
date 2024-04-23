@@ -1,6 +1,6 @@
 ﻿@model List<MobileStoreApp.Data.Models.OrderItem>
 
-<h2>Cart</h2>
+<h3> Shopping Cart</h3>
 
 <table class="table">
     <thead>
@@ -58,29 +58,6 @@
         </tr>
     </tbody>
 </table>
-
-@* @if (Model.Any())
-{
-    <div>
-        <h4>Total Cart Price: @(Model.Sum(item => item.Phone.Price * item.Quantity).ToString("C"))</h4>
-    </div>
-}
-else
-{
-    <h5 class="text-center">Your cart is empty.</h5>
-}
-<br /> *@
-
-@* @if (Model.Any())
-{
-    <form asp-action="Checkout" method="post">
-        <a href="@Url.Action("Index", "Checkout")" class="btn btn-success">Checkout</a> <br />
-    </form>
-}
-else
-{
-    <h5 class="text-center">Your cart is empty.</h5>
-} *@
 
 <a href="@Url.Action("Index", "Shop")" class="btn btn-primary mb-5">Continue Shopping</a>
 
@@ -155,12 +132,9 @@ else
         @if(quantity > 4)
         {
             <h5 id="total">Price with discount: @Model.Sum(item => item.Phone.Price * item.Quantity - (item.Phone.Price * item.Quantity * 0.15m)).ToString("C")</h5>
-
         }
     }
 </div>
-
-
 
 @if (TempData["ErrorMessage"] != null)
 {

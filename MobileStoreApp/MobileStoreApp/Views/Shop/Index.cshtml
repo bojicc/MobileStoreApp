@@ -1,12 +1,20 @@
 ﻿@model IEnumerable<MobileStoreApp.Data.Models.Phone>
 
-<h2 class="text-center">CoreCell Mobile</h2>
+<h3 class="text-center">Explore the latest models of mobile phones!</h3>
 
-
-<form asp-controller="Shop" asp-action="Index" method="get">
-    <div class="d-flex justify-content-end">
-        <input type="text" class="mb-5 mx-2 ps-2" name="filter" placeholder="Search OS or Manufacturer" style="width:250px; border-radius:7px" />
-        <button type="submit" class="btn btn-primary ml-5 mb-5">Filter</button>
+<form asp-controller="Shop" asp-action="Index" method="get" class="d-flex justify-content-between mb-2 mt-5">
+    <div>
+        <label for="sort" class="ms-2">Sort by:</label>
+        <select name="sort" id="sort" class="form-select ms-2" style="width:150px;" onchange="this.form.submit()">
+            <option value="">Select...</option>
+            <option value="highestPrice">Highest Price</option>
+            <option value="lowestPrice">Lowest Price</option>
+        </select>
+        <input type="submit" style="display:none" />
+    </div>
+    <div class="d-flex align-items-center">
+        <input type="text" class="mb-2 mx-2 ps-2" name="filter" placeholder="Search OS or Manufacturer" style="width:250px; height:38px; border-radius:7px" />
+        <button type="submit" class="btn btn-primary me-5 mb-2">Filter</button>
     </div>
 </form>
 
@@ -18,8 +26,7 @@
             <img src="@phone.Picture" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">@phone.Name</h5>
-                @* <p class="card-text">@phone.Description.</p> *@
-                <p class="text-muted">OS: @phone.OperationSystem</p>
+                <p class="text-muted mt-3">OS: @phone.OperationSystem</p>
                 <span class="text-muted">Price per phone: @phone.Price.ToString("C")</span>
                 <p class="text-muted">Avaiable phones: @phone.Quantity</p> 
                 <form asp-controller="Cart" asp-action="AddToCart" method="post">
@@ -33,6 +40,8 @@
         </div>
     }
 </div>
+
+<button class="btn btn-primary" id="back-to-top-btn" onclick="scrollToTop()">Back to Top</button>
 
 @if (TempData["ErrorMessage"] != null)
 {
