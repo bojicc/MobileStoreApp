@@ -17,6 +17,14 @@
       "PackagePath": "staticwebassets\\Xiaomi-Logo.jpg"
     },
     {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\add-to-cart.png",
+      "PackagePath": "staticwebassets\\add-to-cart.png"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\add-to-cart2.png",
+      "PackagePath": "staticwebassets\\add-to-cart2.png"
+    },
+    {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\apple_logo.jpg",
       "PackagePath": "staticwebassets\\apple_logo.jpg"
     },
@@ -29,8 +37,20 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\filter.png",
+      "PackagePath": "staticwebassets\\filter.png"
+    },
+    {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\left-and-right-arrows.png",
+      "PackagePath": "staticwebassets\\left-and-right-arrows.png"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\left-arrow.png",
+      "PackagePath": "staticwebassets\\left-arrow.png"
     },
     {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\lib\\bootstrap\\LICENSE",
@@ -277,12 +297,24 @@
       "PackagePath": "staticwebassets\\samsung.jpg"
     },
     {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\search.png",
+      "PackagePath": "staticwebassets\\search.png"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\shopping.png",
+      "PackagePath": "staticwebassets\\shopping.png"
+    },
+    {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\store.png",
       "PackagePath": "staticwebassets\\store.png"
     },
     {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\storeIcon.png",
       "PackagePath": "staticwebassets\\storeIcon.png"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\up-arrow.png",
+      "PackagePath": "staticwebassets\\up-arrow.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MobileStoreApp.Microsoft.AspNetCore.StaticWebAssets.props",

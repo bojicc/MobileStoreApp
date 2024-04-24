@@ -2,59 +2,26 @@
 
 <div class="row">
     <div class="col-md-6 mb-5">
-        <h3 class="mt-5">@Model.Name</h3>
+        <h4 class="mt-4">@Model.Name</h4>
         <div>
-            <img src="@Model.Picture" alt="@Model.Name" class="text-center" style="max-width: 300px; max-height: 300px;" />
+            <img src="@Model.Picture" alt="@Model.Name" style="max-width: 300px; max-height: 300px;" />
         </div>
 
         <div>
-            <p>@Model.Description</p>
-            <p>Operation System: @Model.OperationSystem</p>
-            <p>Price: @Model.Price.ToString("C")</p>
-            <p>Quantity in stock: @Model.Quantity</p>
+            <p><span class="fw-bold">Specification: </span>@Model.Description</p>
+            <p><span class="fw-bold">Operation System: </span>@Model.OperationSystem</p>
+            <p><span class="fw-bold">Price: </span>@Model.Price.ToString("C")</p>
+            <p><span class="fw-bold">Quantity in stock: </span>@Model.Quantity</p>
         </div>
     </div>
 
     <div id="phoneDetails" class="col-md-6"></div>
 </div>
 
-<div id="allPhonesContainer" class="d-flex justify-content-center">
-    <button id="showAllPhones" class="btn btn-primary">Comapre with</button>
+<div id="allPhonesContainer" class="d-flex justify-content-center mt-5">
+    <button id="showAllPhones" class="btn btn-primary">Comapre <span><img src="~/left-and-right-arrows.png" /></span></button>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#showAllPhones').click(function () {
-            $.ajax({
-                url: '/Shop/AllPhones',
-                type: 'GET',
-                success: function (data) {
-                    $('#allPhonesContainer').html(data);
-                },
-                error: function () {
-                    alert('Error.');
-                }
-            });
-        });
-    });
-</script>
 
-<script>
-    $(document).ready(function () {
-        $('body').on('click', '#phoneList a', function (e) {
-            e.preventDefault();
-            var url = $(this).attr('href');
-            $.ajax({
-                url: url,
-                type: 'GET',
-                success: function (data) {
-                    $('#phoneDetails').html(data);
-                },
-                error: function () {
-                    alert('Error.');
-                }
-            });
-        });
-    });
-</script>
+<a href="@Url.Action("Details", "Shop",  new { id = Model.PhoneId })" class="btn btn-primary"> <img src="~/left-arrow.png" /> Back</a>
+

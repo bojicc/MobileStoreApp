@@ -171,11 +171,15 @@ namespace MobileStoreApp.Controllers
             return View(cartItems.Sum(item => item.Quantity));
         }
 
+
         public async Task<IActionResult> MarkAsShipped(int orderItemId)
         {
             var user = await _userManager.GetUserAsync(this.User);
+
+            // Pronađi aktivnu porudžbinu za trenutnog korisnika
             var activeOrder = _context.Orders.FirstOrDefault(i => i.UserId == user.Id && i.Shipped == false);
 
+            // Kreiraj novu porudžbinu ako ne postoji aktivna porudžbina
             if (activeOrder == null)
             {
                 activeOrder = new Order
@@ -184,22 +188,106 @@ namespace MobileStoreApp.Controllers
                     CreateDate = DateTime.Now,
                     OrderItems = new List<OrderItem>()
                 };
+
                 _context.Orders.Add(activeOrder);
+
             }
-            if (activeOrder != null)
+            else
             {
-
-                activeOrder.Shipped = true;
-
+                // Obriši sve stavke iz tabele OrderItems vezane za aktivnu porudžbinu
                 var orderItemsToRemove = _context.OrderItems.Where(item => item.OrderId == activeOrder.OrderId);
                 _context.OrderItems.RemoveRange(orderItemsToRemove);
-
-                decimal totalPrice = _context.OrderItems.Sum(item => item.Phone.Price * item.Quantity);
-                activeOrder.TotalPrice = totalPrice;
-                await _context.SaveChangesAsync();
             }
+
+            // Postavi status "Shipped" na true za aktivnu porudžbinu
+            activeOrder.Shipped = true;
+
+            // Izračunaj ukupnu cenu porudžbine
+            decimal totalPrice = _context.OrderItems.Sum(item => item.Phone.Price * item.Quantity);
+            activeOrder.TotalPrice = totalPrice;
+
+            // Sačuvaj sve promene u bazi podataka
+            await _context.SaveChangesAsync();
+
+            // Redirektuj na odgovarajuću akciju
             return RedirectToAction("Confirm", "Checkout", new { id = orderItemId });
         }
+
+
+
+
+
+        // MOJAAAAAAAAAAAAAAAAAA********************************************************************************
+        //public async Task<IActionResult> MarkAsShipped(int orderItemId)
+        //{
+        //    var user = await _userManager.GetUserAsync(this.User);
+        //    var activeOrder = _context.Orders.FirstOrDefault(i => i.UserId == user.Id && i.Shipped == false);
+
+        //    if (activeOrder == null)
+        //    {
+        //        activeOrder = new Order
+        //        {
+        //            UserId = user.Id,
+        //            CreateDate = DateTime.Now,
+        //            OrderItems = new List<OrderItem>()
+        //        };
+        //        _context.Orders.Add(activeOrder);
+        //    }
+        //    if (activeOrder != null)
+        //    {
+
+        //        activeOrder.Shipped = true;
+
+        //        var orderItemsToRemove = _context.OrderItems.Where(item => item.OrderId == activeOrder.OrderId);
+        //        _context.OrderItems.RemoveRange(orderItemsToRemove);
+
+        //        decimal totalPrice = _context.OrderItems.Sum(item => item.Phone.Price * item.Quantity);
+        //        activeOrder.TotalPrice = totalPrice;
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    return RedirectToAction("Confirm", "Checkout", new { id = orderItemId });
+        //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         //public async Task<IActionResult> MarkAsShipped(int orderItemId)

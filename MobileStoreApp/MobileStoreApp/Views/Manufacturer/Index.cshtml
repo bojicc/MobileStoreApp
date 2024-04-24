@@ -6,9 +6,11 @@
     @foreach (var phone in Model)
     {
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="card">
+            <div class="card modelsCard">
                 <div class="card-body">
-                    <img src="@phone.Picture" class="card-img-top" alt="...">
+                    <a href="@Url.Action("Details", "Shop", new { id = phone.PhoneId })">
+                        <img src="@phone.Picture" class="card-img-top" alt="@phone.Name" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                    </a>
                     <h5 class="card-title">@phone.Name</h5>
                     <p class="card-text">Price: @phone.Price.ToString("C")</p>
                 </div>
@@ -17,4 +19,4 @@
     }
 </div>
 
-<a href="@Url.Action("Index", "Home")" class="btn btn-primary">Back</a>
+<a href="@Url.Action("Index", "Home")" class="btn btn-primary"><img src="~/left-arrow.png" /> Back</a>

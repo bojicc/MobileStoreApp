@@ -18,12 +18,11 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
-/*  background-image: url(../neil-soni-6wdRuK7bVTE-unsplash.jpg);
+    margin-bottom: 60px;
+    /*  background-image: url(../neil-soni-6wdRuK7bVTE-unsplash.jpg);
   background-size:cover;
   background-repeat: no-repeat;
   background-position: center*/
-
 }
 
 
@@ -137,4 +136,56 @@ body {
     transform: scale(1.10);
 }
 
+
+.modelsCard {
+    transition: transform 0.3s ease;
+}
+
+.modelsCard:hover {
+    transform: scale(1.10);
+}
+
+
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px; /* Zaobljeni ivici */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    border-radius: 10px; /* Zaobljeni ivici */
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Zaobljeni ivici */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+    border-radius: 50%; /* Zaobljeni ivici */
+    font-size: 20px;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
 

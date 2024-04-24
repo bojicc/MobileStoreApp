@@ -7,7 +7,7 @@
 </div>
 
 <div>
-    <p><span class="fw-bold">Description: </span> @Model.Description</p>
+    <p><span class="fw-bold">Specification: </span> @Model.Description</p>
     <p><span class="fw-bold">Operation System: </span> @Model.OperationSystem</p>
     <p><span class="fw-bold">Price: </span> @Model.Price.ToString("C")</p>
     <p><span class="fw-bold">Quantity in stock: </span> @Model.Quantity</p>
@@ -32,9 +32,13 @@
     </p>
 </div>
 
-<a href="@Url.Action("Index", "Shop")" class="btn btn-primary">Back to shop</a>
-<a asp-controller="Shop" asp-action="Compare" asp-route-id="@Model.PhoneId" class="btn btn-primary">Compare Phones</a>
-
+<a href="@Url.Action("Index", "Shop")" class="btn btn-primary"><img src="~/left-arrow.png" /> Back to shop</a>
+<a asp-controller="Shop" asp-action="Compare" asp-route-id="@Model.PhoneId" class="btn btn-primary"> Compare Phones <img src="/left-and-right-arrows.png" /></a>
+<form asp-controller="Cart" asp-action="AddToCart" method="post" style="display:inline-block">
+    <input type="hidden" name="phoneId" value="@Model.PhoneId" />
+    <input style="width: 60px" type="hidden" name="quantity" min="1" value="1" />
+    <button type="submit" class="btn btn-primary">Add to Cart <span><img src="~/add-to-cart.png" /></span></button>
+</form>
 
 <br /><br /> <br />
 <hr />

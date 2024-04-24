@@ -1,12 +1,173 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\views\\manufacturer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\views\\manufacturer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\views\\shop\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\views\\shop\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\views\\shop\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\views\\shop\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\views\\shop\\comparison.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\views\\shop\\comparison.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\views\\shop\\compare.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\views\\shop\\compare.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\views\\shop\\_allphonespartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\views\\shop\\_allphonespartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|c:\\users\\panonit\\desktop\\mobilestoreapp\\mobilestoreapp\\mobilestoreapp\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{28198DD8-A7F9-446D-A279-8C47EF759172}|MobileStoreApp\\MobileStoreApp.csproj|solutionrelative:mobilestoreapp\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 224,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "MobileStoreApp\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "MobileStoreApp\\wwwroot\\js\\site.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-04-24T12:54:51.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "MobileStoreApp\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "MobileStoreApp\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAAwKcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-04-24T12:54:42.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_AllPhonesPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Shop\\_AllPhonesPartial.cshtml",
+              "RelativeDocumentMoniker": "MobileStoreApp\\Views\\Shop\\_AllPhonesPartial.cshtml",
+              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Shop\\_AllPhonesPartial.cshtml",
+              "RelativeToolTip": "MobileStoreApp\\Views\\Shop\\_AllPhonesPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-24T12:38:46.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Compare.cshtml",
+              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Shop\\Compare.cshtml",
+              "RelativeDocumentMoniker": "MobileStoreApp\\Views\\Shop\\Compare.cshtml",
+              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Shop\\Compare.cshtml",
+              "RelativeToolTip": "MobileStoreApp\\Views\\Shop\\Compare.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-24T12:38:23.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Comparison.cshtml",
+              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Shop\\Comparison.cshtml",
+              "RelativeDocumentMoniker": "MobileStoreApp\\Views\\Shop\\Comparison.cshtml",
+              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Shop\\Comparison.cshtml",
+              "RelativeToolTip": "MobileStoreApp\\Views\\Shop\\Comparison.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-24T12:38:19.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Shop\\Details.cshtml",
+              "RelativeDocumentMoniker": "MobileStoreApp\\Views\\Shop\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Shop\\Details.cshtml",
+              "RelativeToolTip": "MobileStoreApp\\Views\\Shop\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-24T12:37:55.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Shop\\Index.cshtml",
+              "RelativeDocumentMoniker": "MobileStoreApp\\Views\\Shop\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Shop\\Index.cshtml",
+              "RelativeToolTip": "MobileStoreApp\\Views\\Shop\\Index.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAAcAAABbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-24T12:01:45.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Manufacturer\\Index.cshtml",
+              "RelativeDocumentMoniker": "MobileStoreApp\\Views\\Manufacturer\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Manufacturer\\Index.cshtml",
+              "RelativeToolTip": "MobileStoreApp\\Views\\Manufacturer\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-24T11:59:16.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "MobileStoreApp\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "MobileStoreApp\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACcAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-24T11:57:37.135Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
