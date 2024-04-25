@@ -47,8 +47,6 @@ function scrollToTop() {
 
 
 
-
-
 let slideIndex = 0;
 
 function moveSlide(n) {
@@ -63,3 +61,5 @@ function moveSlide(n) {
     const offset = -slideIndex * 100;
     document.querySelector('.slider').style.transform = `translateX(${offset}%)`;
 }
+
+

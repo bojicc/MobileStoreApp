@@ -1,31 +1,54 @@
 ﻿@model IEnumerable<MobileStoreApp.Data.Models.Phone>
 
 
-
-<div class="slider-container">
-    <div class="slider">
-        <img src="https://uhdwallpapers.org/uploads/converted/18/11/23/samsung-galaxy-f-wallpaper-image-1920x1080_74646-mm-90.jpg" alt="Telefon 1">
-        <img src="https://www.apple.com/v/iphone-15-pro/c/images/overview/welcome/hero_endframe__ov6ewwmbhiqq_large.jpg" alt="Telefon 2">
-        <img src="https://www.apple.com/105/media/us/iphone/family/2024/1efec3e0-8619-4684-a57e-6e2310394f08/anim/welcome/xlarge.mp4" alt="Telefon 3">
-        <img src="slika4.jpg" alt="Telefon 4">
-        <img src="slika5.jpg" alt="Telefon 5">
+<div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
     </div>
-    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    <div class="carousel-inner carouselHome">
+        <div class="carousel-item active">
+            <img src="https://slidechef.net/wp-content/uploads/2023/09/Iphone-15-Presentation-Template.jpg" class="d-block w-100 picture" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://mybroadband.co.za/news/wp-content/uploads/2024/01/008-kv-lifestyle-galaxy-s24ultra-spen-circle-to-search-2p-scaled.jpg" class="d-block w-100 picture" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://i.ytimg.com/vi/MeuycYr8qEo/maxresdefault.jpg" class="d-block w-100 picture" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://cdn.shoplightspeed.com/shops/662820/files/59186794/pro-7.png" class="d-block w-100 picture" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://www.91-cdn.com/hub/wp-content/uploads/2023/07/Samsung-Galaxy-Z-Fold5-Flip5.jpg" class="d-block w-100 picture" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/Honor-Magic6-Pro-Global.jpg" class="d-block w-100 picture" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
 
 
-
-
-
-<div class="card card-body mb-4" id="homeDiv" style="border:2px solid #2C3E50">
+@* <div class="card card-body mb-4" id="homeDiv" style="border:2px solid #2C3E50">
     <h4 class="card-title text-center">Welcome to CoreCell Mobile, our mobile phone store!</h4> <br />
     <p class="card-text">
     <p>Here at CoreCell Mobile, we bring you the latest and most popular mobile phones from the world of technology. Whether you're seeking cutting-edge smartphones with the latest features, dependable devices with exceptional performance, or simply wish to explore the newest trends in mobile technology, we're here to assist you in finding the perfect phone to meet your needs.</p>
     <p>Our dedication to mobile phones is evident in our extensive selection of products, ranging from leading brands to the latest innovations. Whether you're a tech enthusiast, a business professional, or simply want to stay connected with your loved ones, our team of experts is available to offer support and recommendations to ensure you make the best decision when selecting your new mobile device.</p>
     <p>Enjoy browsing our range of offerings, and don't hesitate to reach out if you have any questions or require additional information. Thank you for choosing CoreCell Mobile for all your mobile phone needs.</p>
     </p>
-</div>
+</div> *@
 
 
 <div class="container-fluid p-3 mb-4">
@@ -59,15 +82,15 @@
 </div>
 
 
-<a href="@Url.Action("Index", "Shop")" class="btn btn-primary d-flex justify-content-center">Go to Shop </a>
+<a href="@Url.Action("Index", "Shop")" style="border-radius:20px;" class="btn btn-primary d-flex justify-content-center">Go to Shop </a>
 
 
-<h4 class="mt-5 mb-3">Top Rated Phones</h4>
+<h4 class="mt-5 mb-3 sedan-regular">Top Rated Phones</h4>
 
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div class="carousel-items active">
             <div class="container">
                 <div class="row">
                     @foreach (var item in Model)

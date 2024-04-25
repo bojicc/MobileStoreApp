@@ -206,6 +206,16 @@ namespace MobileStoreApp.Controllers
             decimal totalPrice = _context.OrderItems.Sum(item => item.Phone.Price * item.Quantity);
             activeOrder.TotalPrice = totalPrice;
 
+            foreach (var orderItem in _context.OrderItems)
+            {
+                var phone = _context.Phones.FirstOrDefault(p => p.PhoneId == orderItem.PhoneId);
+                if (phone != null)
+                {
+                    phone.Quantity -= orderItem.Quantity;
+                }
+            }
+
+
             // Sačuvaj sve promene u bazi podataka
             await _context.SaveChangesAsync();
 

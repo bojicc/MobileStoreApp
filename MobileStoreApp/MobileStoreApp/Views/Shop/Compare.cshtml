@@ -2,9 +2,9 @@
 
 <div class="row">
     <div class="col-md-6 mb-5">
-        <h4 class="mt-4">@Model.Name</h4>
+        <h4 class="mt-4 sedan-regular">@Model.Name</h4>
         <div>
-            <img src="@Model.Picture" alt="@Model.Name" style="max-width: 300px; max-height: 300px;" />
+            <img src="@Model.Picture" alt="@Model.Name" style="max-width: 350px; max-height: 350px;" />
         </div>
 
         <div>
@@ -19,9 +19,9 @@
 </div>
 
 <div id="allPhonesContainer" class="d-flex justify-content-center mt-5">
-    <button id="showAllPhones" class="btn btn-primary">Comapre <span><img src="~/left-and-right-arrows.png" /></span></button>
+    <button id="showAllPhones" class="btn btn-primary">Comapre <span><img src="~/left-and-right-arrows.png" class="white-icon" /></span></button>
 </div>
 
 
-<a href="@Url.Action("Details", "Shop",  new { id = Model.PhoneId })" class="btn btn-primary"> <img src="~/left-arrow.png" /> Back</a>
+<a href="@Url.Action("Details", "Shop",  new { id = Model.PhoneId })" class="btn btn-primary"> <img src="~/left-arrow.png" class="white-icon" /> Back</a>
 

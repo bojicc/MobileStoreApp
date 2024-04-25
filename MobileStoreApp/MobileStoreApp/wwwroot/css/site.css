@@ -19,10 +19,24 @@ html {
 
 body {
     margin-bottom: 60px;
-    /*  background-image: url(../neil-soni-6wdRuK7bVTE-unsplash.jpg);
-  background-size:cover;
-  background-repeat: no-repeat;
-  background-position: center*/
+}
+
+.white-icon {
+    filter: invert(100%);
+}
+
+
+
+.sedan-regular {
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.form-groupp {
+    display: flex;
+    align-items: center;
 }
 
 
@@ -79,8 +93,8 @@ body {
 
 
 .circle {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%; 
 }
 
@@ -146,46 +160,15 @@ body {
 }
 
 
-
-.slider-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 10px; /* Zaobljeni ivici */
+.carousel {
+    margin-bottom: 40px;
+    max-width: 99%;
 }
 
-.slider {
-    display: flex;
-    transition: transform 0.5s ease;
-    border-radius: 10px; /* Zaobljeni ivici */
-    overflow: hidden;
+.carousel-item img {
+    height: 560px;
 }
 
-.slider img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px; /* Zaobljeni ivici */
+.carouselHome {
+    border-radius:50px;
 }
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1;
-    border-radius: 50%; /* Zaobljeni ivici */
-    font-size: 20px;
-}
-
-.prev {
-    left: 20px;
-}
-
-.next {
-    right: 20px;
-}
-

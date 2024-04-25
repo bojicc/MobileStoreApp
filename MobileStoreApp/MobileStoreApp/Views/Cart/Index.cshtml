@@ -1,6 +1,6 @@
 ﻿@model List<MobileStoreApp.Data.Models.OrderItem>
 
-<h3> Shopping Cart</h3>
+<h3 class="sedan-regular mb-3">Shopping Cart</h3>
 
 <table class="table">
     <thead>
@@ -25,7 +25,7 @@
                 <td>
                     <form asp-action="UpdateQuantity" asp-controller="Cart" method="post">
                         <input type="hidden" name="orderItemId" value="@item.OrderItemId" />
-                        <input style="width: 60px" type="number" name="quantity" min="1" value="@item.Quantity" onchange="this.form.submit()" />
+                        <input style="width: 60px; border-radius:5px" type="number" name="quantity" min="1" value="@item.Quantity" onchange="this.form.submit()" />
                     </form>
                 </td>
                 <td class="subtotal">@((item.Phone.Price * item.Quantity).ToString("C"))</td>
@@ -36,23 +36,9 @@
                     </form>
                 </td>
             </tr>
-            @* @if (item.Quantity >= 4)
-            {
-                <tr>
-                    <td colspan="5">Discount:</td>
-                    <td>@(((item.Phone.Price * item.Quantity) * 0.15m).ToString("C"))</td>
-                </tr>
-            }
-            else
-            {
-                <tr>
-                    <td colspan="5">Regular Price:</td>
-                    <td>@((item.Phone.Price * item.Quantity).ToString("C"))</td>
-                </tr>
-            } *@
         }
         <tr>
-            <td colspan="5">Total:</td>
+            <td colspan="5" class="fw-bold fs-5">Total:</td>
 
             <td id="total">@Model.Sum(item => item.Phone.Price * item.Quantity).ToString("C")</td>
         </tr>
@@ -61,7 +47,7 @@
 
 <a href="@Url.Action("Index", "Shop")" class="btn btn-primary mb-5">Continue Shopping</a>
 
-<h5 class="mt-5">Customer data:</h5>
+<h3 class="mt-5 sedan-regular">Customer data:</h3>
 <hr />
 <form class="row g-3">
     <div class="col-md-4">
@@ -84,7 +70,11 @@
         <label for="validationDefault04" class="form-label">State</label>
         <select class="form-select" id="validationDefault04" required>
             <option selected disabled value="">Choose...</option>
-            <option>...</option>
+            <option>Beograd</option>
+            <option>Novi Sad</option>
+            <option>Niš</option>
+            <option>Subotica</option>
+            <option>Kragujevac</option>
         </select>
     </div>
     <div class="col-md-4">
@@ -92,7 +82,7 @@
         <input type="text" class="form-control" id="validationDefault05" required>
     </div>
     <div class="col-12">
-        <div class="form-check">
+        <div class="form-check mt-4">
             <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
             <label class="form-check-label" for="invalidCheck2">
                 Agree to terms and conditions
@@ -104,36 +94,62 @@
         {
             <form asp-action="MarkAsShipped" method="post">
                 <input type="hidden" name="orderItemId" value="@item.OrderItemId" />
-
             </form>
         }
-        <button type="submit" class="btn btn-success" asp-action="MarkAsShipped">Submit Order</button>       
+        <button type="submit" class="btn btn-success mb-5" asp-action="MarkAsShipped">Submit Order</button>       
     </div>
 </form>
 
-<h5 class="d-flex justify-content-end mt-4">Total:</h5>
 <hr />
 
-@{
-    var quantity = 0;
-}
-
+<h5 class="d-flex justify-content-end mt-4">Total:</h5>
 <div class="d-flex justify-content-end">
-    <h5 id="total" class="">@Model.Sum(item => item.Phone.Price * item.Quantity).ToString("C")</h5>
+    <h5 id="regularTotal">0.00</h5>
 </div>
 
 <div class="d-flex justify-content-end">
+    <hr style="width: 15%">
+</div>
 
-    @foreach(var item in Model)
-    {
-        quantity += item.Quantity;
+<h5 class="d-flex justify-content-end mt-2">Discount 20%:</h5>
+<div class="d-flex justify-content-end">
+    <h5 id="discount">0.00</h5>
+</div>
 
-        @if(quantity > 4)
-        {
-            <h5 id="total">Price with discount: @Model.Sum(item => item.Phone.Price * item.Quantity - (item.Phone.Price * item.Quantity * 0.15m)).ToString("C")</h5>
+<div class="d-flex justify-content-end">
+    <hr style="width: 15%">
+</div>
+
+<h5 class="d-flex justify-content-end mt-2">Price with Discount:</h5>
+<div class="d-flex justify-content-end">
+    <h5 id="discountedTotal">0.00</h5>
+</div>
+
+
+<script>
+    function calculateTotal() {
+        var total = parseFloat('@Model.Sum(item => item.Phone.Price * item.Quantity)');
+        var quantity = parseInt('@Model.Sum(item => item.Quantity)');
+        var regularTotal = total;
+        var discountedTotal = regularTotal;
+
+        if (quantity > 4) {
+            var discount = 0.2; 
+            discountedTotal = regularTotal * (1 - discount);
         }
+
+        var currencyOptions = { style: 'currency', currency: 'GBP' }; 
+
+        document.getElementById('regularTotal').innerText = regularTotal.toLocaleString('en-GB', currencyOptions);
+        document.getElementById('discount').innerText = (regularTotal - discountedTotal).toLocaleString('en-GB', currencyOptions);
+        document.getElementById('discountedTotal').innerText = discountedTotal.toLocaleString('en-GB', currencyOptions);
     }
-</div>
+
+    window.onload = function () {
+        calculateTotal();
+    };
+</script>
+
 
 @if (TempData["ErrorMessage"] != null)
 {

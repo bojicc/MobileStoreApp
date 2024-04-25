@@ -1,6 +1,6 @@
 ﻿@model MobileStoreApp.Data.Models.Phone
 
-<h3 class="mt-5">@Model.Name</h3>
+<h3 class="mt-5 sedan-regular">@Model.Name</h3>
 
 <div>
     <img src="@Model.Picture" alt="@Model.Name" class="text-center" style="max-width: 350px; max-height: 350px;" />
@@ -32,12 +32,14 @@
     </p>
 </div>
 
-<a href="@Url.Action("Index", "Shop")" class="btn btn-primary"><img src="~/left-arrow.png" /> Back to shop</a>
-<a asp-controller="Shop" asp-action="Compare" asp-route-id="@Model.PhoneId" class="btn btn-primary"> Compare Phones <img src="/left-and-right-arrows.png" /></a>
+<a href="@Url.Action("Index", "Shop")" class="btn btn-primary me-3">
+    <img src="~/left-arrow.png" class="white-icon" /> Back to shop
+</a>
+<a asp-controller="Shop" asp-action="Compare" asp-route-id="@Model.PhoneId" class="btn btn-primary me-3"> Compare Phones <img src="/left-and-right-arrows.png" class="white-icon" /></a>
 <form asp-controller="Cart" asp-action="AddToCart" method="post" style="display:inline-block">
     <input type="hidden" name="phoneId" value="@Model.PhoneId" />
     <input style="width: 60px" type="hidden" name="quantity" min="1" value="1" />
-    <button type="submit" class="btn btn-primary">Add to Cart <span><img src="~/add-to-cart.png" /></span></button>
+    <button type="submit" class="btn btn-primary">Add to Cart <span><img src="~/add-to-cart.png" class="white-icon" /></span></button>
 </form>
 
 <br /><br /> <br />
@@ -90,5 +92,5 @@
 
         <textarea class="form-control" id="content" name="content" rows="4" placeholder="Write Comment:" required></textarea>
     </div>
-    <button type="submit" class="btn btn-success mt-3">Submit</button>
+    <button type="submit" class="btn btn-success mt-3">Add comment</button>
 </form>

@@ -4,11 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h2 class="mb-4">Phones</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-outline-primary">Create New Phone</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -34,8 +35,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-
-                    <img src="@Html.DisplayFor(modelItem => item.Picture)" style="height:100px; width:100px" />
+                <img src="@Html.DisplayFor(modelItem => item.Picture)" style="height:100px; width:100px" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -50,9 +50,9 @@
                 @Html.DisplayFor(modelItem => item.Quantity)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.PhoneId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PhoneId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PhoneId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.PhoneId" class="btn btn-outline-secondary mb-2">Edit</a> <br />
+                <a asp-action="Details" asp-route-id="@item.PhoneId" class="btn btn-outline-info mb-2">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.PhoneId" class="btn btn-outline-danger">Delete</a>
             </td>
         </tr>
 }

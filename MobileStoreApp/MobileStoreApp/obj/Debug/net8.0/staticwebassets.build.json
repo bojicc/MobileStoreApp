@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5PP41cnZtUKt84Z+x6w2ZmhnO0aEhI5YeDTD9r3EDnU=",
+  "Hash": "k1JNKwW1VsYyCSXU8fJYTbl1jihxu0qgwYe9DQUO/gQ=",
   "Source": "MobileStoreApp",
   "BasePath": "_content/MobileStoreApp",
   "Mode": "Default",
@@ -1307,6 +1307,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\filter.png"
+    },
+    {
+      "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\filterr.png",
+      "SourceId": "MobileStoreApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\",
+      "BasePath": "_content/MobileStoreApp",
+      "RelativePath": "filterr.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\filterr.png"
     },
     {
       "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\Honor-logo.jpg",
