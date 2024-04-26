@@ -21,6 +21,11 @@ body {
     margin-bottom: 60px;
 }
 
+
+
+
+
+
 .white-icon {
     filter: invert(100%);
 }
@@ -143,10 +148,10 @@ body {
 
 
 
-.topRatedPhones {
+.topRatedPhones, .shopPhones {
     transition: transform 0.3s ease;
 }
-.topRatedPhones:hover {
+.topRatedPhones:hover, .shopPhones:hover {
     transform: scale(1.10);
 }
 

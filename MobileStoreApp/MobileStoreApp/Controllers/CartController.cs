@@ -39,7 +39,21 @@ namespace MobileStoreApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var orderItems = await _context.OrderItems.Include(oi => oi.Phone).Include(i => i.Order).ToListAsync();
+            var user = await _userManager.GetUserAsync(this.User);
+            if (user == null)
+            {
+                // Korisnik nije prijavljen, preusmjerite ga na stranicu za prijavu ili registaciju
+                return RedirectToAction("Login", "Account");
+            }
+
+            var orderItems = await _context.OrderItems
+                .Include(oi => oi.Phone)
+                .Include(i => i.Order)
+                .Where(oi => oi.Order.UserId == user.Id) // Filtriraj stavke korpe samo za trenutnog korisnika
+                .ToListAsync();
+
+
+            //var orderItems = await _context.OrderItems.Include(oi => oi.Phone).Include(i => i.Order).ToListAsync();
             int cartItemCount = orderItems.Sum(oi => oi.Quantity);
             ViewBag.CartItemCount = cartItemCount;
             return View(orderItems);
@@ -50,9 +64,15 @@ namespace MobileStoreApp.Controllers
         public async Task<IActionResult> AddToCart(int phoneId, int quantity)
         {
             var user = await _userManager.GetUserAsync(this.User);
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+
             var activeOrder = _context.Orders
                .Include(i => i.OrderItems)
-               .FirstOrDefault(i => i.UserId == user.Id);
+               .FirstOrDefault(i => i.UserId == user.Id && i.Shipped == false);
 
             if (activeOrder == null)
             {
@@ -61,7 +81,7 @@ namespace MobileStoreApp.Controllers
                     UserId = user.Id,
                     CreateDate = DateTime.Now,
                     OrderItems = new List<OrderItem>()
-                };
+                };  
 
                 _context.Orders.Add(activeOrder);
                 //await _context.SaveChangesAsync();
@@ -100,6 +120,10 @@ namespace MobileStoreApp.Controllers
                 return RedirectToAction("Index", "Shop", new { id = phoneId });
             }
 
+            // Ovdje izračunajte ukupnu cijenu samo za proizvode u trenutnoj narudžbi korisnika
+            decimal totalPriceForCurrentUser = activeOrder.OrderItems.Sum(item => item.Order.TotalPrice);
+
+            ViewData["TotalPriceForCurrentUser"] = totalPriceForCurrentUser;
 
             int cartItemCount = _context.OrderItems.Sum(item => item.Quantity);
 
@@ -176,10 +200,10 @@ namespace MobileStoreApp.Controllers
         {
             var user = await _userManager.GetUserAsync(this.User);
 
-            // Pronađi aktivnu porudžbinu za trenutnog korisnika
-            var activeOrder = _context.Orders.FirstOrDefault(i => i.UserId == user.Id && i.Shipped == false);
+            var activeOrder = _context.Orders.Include(o => o.OrderItems).FirstOrDefault(i => i.UserId == user.Id && i.Shipped == false);
 
-            // Kreiraj novu porudžbinu ako ne postoji aktivna porudžbina
+            //var activeOrder = _context.Orders.FirstOrDefault(i => i.UserId == user.Id && i.Shipped == false);
+
             if (activeOrder == null)
             {
                 activeOrder = new Order
@@ -190,22 +214,22 @@ namespace MobileStoreApp.Controllers
                 };
 
                 _context.Orders.Add(activeOrder);
-
             }
             else
             {
-                // Obriši sve stavke iz tabele OrderItems vezane za aktivnu porudžbinu
                 var orderItemsToRemove = _context.OrderItems.Where(item => item.OrderId == activeOrder.OrderId);
                 _context.OrderItems.RemoveRange(orderItemsToRemove);
             }
 
-            // Postavi status "Shipped" na true za aktivnu porudžbinu
-            activeOrder.Shipped = true;
 
-            // Izračunaj ukupnu cenu porudžbine
+            //decimal totalPrice = activeOrder.OrderItems.Sum(item => item.Phone.Price * item.Quantity);
             decimal totalPrice = _context.OrderItems.Sum(item => item.Phone.Price * item.Quantity);
             activeOrder.TotalPrice = totalPrice;
 
+
+            activeOrder.Shipped = true;
+                        
+                
             foreach (var orderItem in _context.OrderItems)
             {
                 var phone = _context.Phones.FirstOrDefault(p => p.PhoneId == orderItem.PhoneId);
@@ -215,11 +239,8 @@ namespace MobileStoreApp.Controllers
                 }
             }
 
-
-            // Sačuvaj sve promene u bazi podataka
             await _context.SaveChangesAsync();
 
-            // Redirektuj na odgovarajuću akciju
             return RedirectToAction("Confirm", "Checkout", new { id = orderItemId });
         }
 
