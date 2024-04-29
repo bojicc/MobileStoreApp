@@ -29,20 +29,28 @@
       "PackagePath": "staticwebassets\\apple_logo.jpg"
     },
     {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\contact-mail.png",
+      "PackagePath": "staticwebassets\\contact-mail.png"
+    },
+    {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\facebook.png",
+      "PackagePath": "staticwebassets\\facebook.png"
     },
     {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\filter.png",
-      "PackagePath": "staticwebassets\\filter.png"
-    },
-    {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\filterr.png",
       "PackagePath": "staticwebassets\\filterr.png"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\instagram.png",
+      "PackagePath": "staticwebassets\\instagram.png"
     },
     {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\js\\site.js",
@@ -289,12 +297,8 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\mobile-phones-store-generative-a.jpg",
-      "PackagePath": "staticwebassets\\mobile-phones-store-generative-a.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\neil-soni-6wdRuK7bVTE-unsplash.jpg",
-      "PackagePath": "staticwebassets\\neil-soni-6wdRuK7bVTE-unsplash.jpg"
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\location.png",
+      "PackagePath": "staticwebassets\\location.png"
     },
     {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\samsung.jpg",
@@ -309,12 +313,24 @@
       "PackagePath": "staticwebassets\\shopping.png"
     },
     {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\social-media.png",
+      "PackagePath": "staticwebassets\\social-media.png"
+    },
+    {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\store.png",
       "PackagePath": "staticwebassets\\store.png"
     },
     {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\storeIcon.png",
       "PackagePath": "staticwebassets\\storeIcon.png"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\time-management.png",
+      "PackagePath": "staticwebassets\\time-management.png"
+    },
+    {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\twitter.png",
+      "PackagePath": "staticwebassets\\twitter.png"
     },
     {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\up-arrow.png",

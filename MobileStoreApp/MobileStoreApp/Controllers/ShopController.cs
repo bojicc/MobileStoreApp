@@ -48,19 +48,6 @@ namespace MobileStoreApp.Controllers
             return View(phones);
         }
 
-        //public IActionResult Index(string filter)
-        //{
-        //    var phones = _phoneRepository.GetAllPhones();
-
-        //    if (!string.IsNullOrEmpty(filter))
-        //    {
-        //        phones = phones.Where(p => p.OperationSystem.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 || p.Name.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
-
-        //    }
-        //    return View(phones);
-
-        //}
-
         public IActionResult Details(int id)
         {
             var phone = _context.Phones

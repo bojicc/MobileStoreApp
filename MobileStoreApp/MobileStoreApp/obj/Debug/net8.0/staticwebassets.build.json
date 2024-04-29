@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "k1JNKwW1VsYyCSXU8fJYTbl1jihxu0qgwYe9DQUO/gQ=",
+  "Hash": "1ETRhSTt78tA0anRwprKys53JwbQypGPJr1vxI/Te/Y=",
   "Source": "MobileStoreApp",
   "BasePath": "_content/MobileStoreApp",
   "Mode": "Default",
@@ -1252,6 +1252,25 @@
       "OriginalItemSpec": "wwwroot\\apple_logo.jpg"
     },
     {
+      "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\contact-mail.png",
+      "SourceId": "MobileStoreApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\",
+      "BasePath": "_content/MobileStoreApp",
+      "RelativePath": "contact-mail.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\contact-mail.png"
+    },
+    {
       "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\css\\site.css",
       "SourceId": "MobileStoreApp",
       "SourceType": "Discovered",
@@ -1271,6 +1290,25 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\facebook.png",
+      "SourceId": "MobileStoreApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\",
+      "BasePath": "_content/MobileStoreApp",
+      "RelativePath": "facebook.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\facebook.png"
+    },
+    {
       "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\favicon.ico",
       "SourceId": "MobileStoreApp",
       "SourceType": "Discovered",
@@ -1288,25 +1326,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
-    },
-    {
-      "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\filter.png",
-      "SourceId": "MobileStoreApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\",
-      "BasePath": "_content/MobileStoreApp",
-      "RelativePath": "filter.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\filter.png"
     },
     {
       "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\filterr.png",
@@ -1345,6 +1364,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Honor-logo.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\instagram.png",
+      "SourceId": "MobileStoreApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\",
+      "BasePath": "_content/MobileStoreApp",
+      "RelativePath": "instagram.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\instagram.png"
     },
     {
       "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\js\\site.js",
@@ -2506,12 +2544,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\mobile-phones-store-generative-a.jpg",
+      "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\location.png",
       "SourceId": "MobileStoreApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\",
       "BasePath": "_content/MobileStoreApp",
-      "RelativePath": "mobile-phones-store-generative-a.jpg",
+      "RelativePath": "location.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2522,7 +2560,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\mobile-phones-store-generative-a.jpg"
+      "OriginalItemSpec": "wwwroot\\location.png"
     },
     {
       "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\Motorola-Logo.jpg",
@@ -2542,25 +2580,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Motorola-Logo.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\neil-soni-6wdRuK7bVTE-unsplash.jpg",
-      "SourceId": "MobileStoreApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\",
-      "BasePath": "_content/MobileStoreApp",
-      "RelativePath": "neil-soni-6wdRuK7bVTE-unsplash.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\neil-soni-6wdRuK7bVTE-unsplash.jpg"
     },
     {
       "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\samsung.jpg",
@@ -2620,6 +2639,25 @@
       "OriginalItemSpec": "wwwroot\\shopping.png"
     },
     {
+      "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\social-media.png",
+      "SourceId": "MobileStoreApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\",
+      "BasePath": "_content/MobileStoreApp",
+      "RelativePath": "social-media.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\social-media.png"
+    },
+    {
       "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\store.png",
       "SourceId": "MobileStoreApp",
       "SourceType": "Discovered",
@@ -2656,6 +2694,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\storeIcon.png"
+    },
+    {
+      "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\time-management.png",
+      "SourceId": "MobileStoreApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\",
+      "BasePath": "_content/MobileStoreApp",
+      "RelativePath": "time-management.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\time-management.png"
+    },
+    {
+      "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\twitter.png",
+      "SourceId": "MobileStoreApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\",
+      "BasePath": "_content/MobileStoreApp",
+      "RelativePath": "twitter.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\twitter.png"
     },
     {
       "Identity": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\up-arrow.png",

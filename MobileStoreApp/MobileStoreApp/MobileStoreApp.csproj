@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <None Include="wwwroot\apple_logo.jpg" />
-    <None Include="wwwroot\mobile-phones-store-generative-a.jpg" />
     <None Include="wwwroot\storeIcon.png" />
   </ItemGroup>
 
