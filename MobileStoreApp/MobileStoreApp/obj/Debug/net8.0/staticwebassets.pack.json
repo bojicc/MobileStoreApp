@@ -317,6 +317,10 @@
       "PackagePath": "staticwebassets\\social-media.png"
     },
     {
+      "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\socialmedia.png",
+      "PackagePath": "staticwebassets\\socialmedia.png"
+    },
+    {
       "Id": "C:\\Users\\Panonit\\Desktop\\MobileStoreApp\\MobileStoreApp\\MobileStoreApp\\wwwroot\\store.png",
       "PackagePath": "staticwebassets\\store.png"
     },

@@ -34,26 +34,23 @@ namespace MobileStoreApp.Controllers
             _userManager = userManager;
             _cartService = cartService;
         }
-        private static List<OrderItem> cartItems = new List<OrderItem>();
 
+        private static List<OrderItem> cartItems = new List<OrderItem>();
 
         public async Task<IActionResult> Index()
         {
             var user = await _userManager.GetUserAsync(this.User);
             if (user == null)
             {
-                // Korisnik nije prijavljen, preusmjerite ga na stranicu za prijavu ili registaciju
                 return RedirectToAction("Login", "Account");
             }
 
             var orderItems = await _context.OrderItems
                 .Include(oi => oi.Phone)
                 .Include(i => i.Order)
-                .Where(oi => oi.Order.UserId == user.Id) // Filtriraj stavke korpe samo za trenutnog korisnika
+                .Where(oi => oi.Order.UserId == user.Id) 
                 .ToListAsync();
 
-
-            //var orderItems = await _context.OrderItems.Include(oi => oi.Phone).Include(i => i.Order).ToListAsync();
             int cartItemCount = orderItems.Sum(oi => oi.Quantity);
             ViewBag.CartItemCount = cartItemCount;
             return View(orderItems);
@@ -87,7 +84,6 @@ namespace MobileStoreApp.Controllers
                 //await _context.SaveChangesAsync();
             }
 
-
             var phone = await _context.Phones.FindAsync(phoneId);
 
             if (phone == null)
@@ -97,9 +93,6 @@ namespace MobileStoreApp.Controllers
 
             if (quantity <= phone.Quantity)
             {
-                //await _context.Entry(activeOrder).Reference(o => o.OrderItems).LoadAsync();
-
-                // Check if the book is already in the cart
                 var existingCartItem = activeOrder.OrderItems.FirstOrDefault(item => item.PhoneId == phoneId);
                 if (existingCartItem != null)
                 {
@@ -107,10 +100,9 @@ namespace MobileStoreApp.Controllers
                 }
                 else
                 {
-                    // If not, add it to the cart
                     activeOrder.OrderItems.Add(new OrderItem { PhoneId = phoneId, Quantity = quantity, Phone = phone });
                 }
-                //phone.Quantity -= quantity;
+
                 await _context.SaveChangesAsync();
             }
             else
@@ -120,7 +112,6 @@ namespace MobileStoreApp.Controllers
                 return RedirectToAction("Index", "Shop", new { id = phoneId });
             }
 
-            // Ovdje izračunajte ukupnu cijenu samo za proizvode u trenutnoj narudžbi korisnika
             decimal totalPriceForCurrentUser = activeOrder.OrderItems.Sum(item => item.Order.TotalPrice);
 
             ViewData["TotalPriceForCurrentUser"] = totalPriceForCurrentUser;
@@ -128,11 +119,10 @@ namespace MobileStoreApp.Controllers
             int cartItemCount = _context.OrderItems.Sum(item => item.Quantity);
 
             ViewData["CartItemCount"] = cartItemCount;
-            //ViewBag.CartItemCount = _cartService.CartItemCount();
 
             return RedirectToAction("Index", "Cart");
-
         }
+
 
         [HttpPost]
         public async Task<IActionResult> RemoveFromCart(int orderItemId)
@@ -190,6 +180,7 @@ namespace MobileStoreApp.Controllers
             return RedirectToAction("Index");
         }
 
+
         public IActionResult getCartItemCount()
         {
             return View(cartItems.Sum(item => item.Quantity));
@@ -201,8 +192,6 @@ namespace MobileStoreApp.Controllers
             var user = await _userManager.GetUserAsync(this.User);
 
             var activeOrder = _context.Orders.Include(o => o.OrderItems).FirstOrDefault(i => i.UserId == user.Id && i.Shipped == false);
-
-            //var activeOrder = _context.Orders.FirstOrDefault(i => i.UserId == user.Id && i.Shipped == false);
 
             if (activeOrder == null)
             {
@@ -221,8 +210,6 @@ namespace MobileStoreApp.Controllers
                 _context.OrderItems.RemoveRange(orderItemsToRemove);
             }
 
-
-            //decimal totalPrice = activeOrder.OrderItems.Sum(item => item.Phone.Price * item.Quantity);
             decimal totalPrice = _context.OrderItems.Sum(item => item.Phone.Price * item.Quantity);
             activeOrder.TotalPrice = totalPrice;
 
